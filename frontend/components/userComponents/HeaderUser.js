@@ -1,20 +1,28 @@
 import React from 'react';
 import {Text, 
-        Dimensions,
         Image, 
         View,
-        ScrollView,
         SafeAreaView,
-        StyleSheet} from 'react-native';
+        TouchableOpacity
+        } from 'react-native';
 import UserImage from '../../assets/icon/user.png'
 import styles from '../styles'
+import SeparateView from './SeparateView';
+import { useNavigation } from '@react-navigation/native';
 
 export default function HeaderUser() {
+    const navigation = useNavigation()
   return (
     <SafeAreaView style = {styles.container}>
+        <SeparateView/>
         <View style = {[styles.mainHeader, styles.mt_20]}>
-            <Image source = {UserImage}
-                    style = {styles.userImage}/>
+            <TouchableOpacity 
+            onPress={() => {
+                navigation.navigate('LogIn')
+            }}>
+                <Image source = {UserImage}
+                        style = {styles.userImage}/>
+            </TouchableOpacity>
             <View style = {styles.ml_10}>
                 <Text style = {[styles.userName, styles.bold]}>Lê Công Nam</Text>
                 <Text style = {styles.bottom}>

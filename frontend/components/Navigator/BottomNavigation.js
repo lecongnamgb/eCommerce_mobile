@@ -38,11 +38,11 @@ export default function BottomNavigation() {
                 name="Tôi" 
                 component={UserScreen}
                 options={{
-                    headerShown: false,
                     tabBarLabel: 'Tôi',
                     tabBarIcon: ({color}) => (
                         <MaterialCommunityIcons name="account" color={color} size={26} />
-  )
+  ),
+                    headerShown: false
                 }}
             />
         </Tab.Navigator>

@@ -5,24 +5,23 @@ import { StyleSheet,
     ScrollView, 
     View, 
     SafeAreaView} from 'react-native';
-import HeaderUser from '../components/userComponents/HeaderUser';
-import UserOptionTag from '../components/userComponents/UserOptionTag';
-import record from '../assets/icon/icon_record.png';
-import store from '../assets/icon/store.png';
-import PurchaseStatus from '../components/userComponents/PurchaseStatus';
-import bagIcon from '../assets/icon/bag.png'
-import HorizontalProductList from '../components/userComponents/HorizontalProductList';
-import SeparateView from '../components/userComponents/SeparateView';
-import heartIcon from '../assets/icon/heart.png';
-import clockIcon from '../assets/icon/clock.png';
-import starIcon from '../assets/icon/star.png';
-import voucherIcon from '../assets/icon/voucher.png';
-import profileIcon from '../assets/icon/profile.png';
-import assistantIcon from '../assets/icon/assistant.png';
-import questionMarkIcon from '../assets/icon/question.png';
+import HeaderUser from './HeaderUser';
+import UserOptionTag from './UserOptionTag';
+import record from '../../assets/icon/icon_record.png';
+import store from '../../assets/icon/store.png';
+import PurchaseStatus from './PurchaseStatus';
+import bagIcon from '../../assets/icon/bag.png'
+import HorizontalProductList from './HorizontalProductList';
+import SeparateView from './SeparateView';
+import heartIcon from '../../assets/icon/heart.png';
+import clockIcon from '../../assets/icon/clock.png';
+import starIcon from '../../assets/icon/star.png';
+import voucherIcon from '../../assets/icon/voucher.png';
+import profileIcon from '../../assets/icon/profile.png';
+import assistantIcon from '../../assets/icon/assistant.png';
+import questionMarkIcon from '../../assets/icon/question.png';
 
-
-export default function User() {
+export default function MainUserScreen() {
   return (
     <SafeAreaView>
     <ScrollView>

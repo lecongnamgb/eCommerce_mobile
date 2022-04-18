@@ -1,7 +1,8 @@
-import { View, FlatList } from 'react-native'
+import { View, FlatList, Button, SafeAreaView } from 'react-native'
 import React from 'react'
 import RecommendItem from './RecommendItem'
 import RecommendToday from './RecommendToday'
+import SearchForm from './SearchForm'
 
 const listData = [
     {
@@ -76,9 +77,10 @@ const listData = [
     }
 ]
 
-export default function RecommendListItem() {
+export default function RecommendListItem({navigation}) {
   return (
-      <View>
+      <SafeAreaView style = {{backgroundColor: '#fff'}}>
+        <SearchForm width = {"75%"}/>
         <FlatList
                 data={listData}
                 renderItem={({item}) => <RecommendItem recommendItem = {item}/>}
@@ -87,6 +89,6 @@ export default function RecommendListItem() {
                 scrollEnabled={true}
                 ListHeaderComponent={RecommendToday}
         />
-   </View>
+   </SafeAreaView>
   )
 }

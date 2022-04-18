@@ -284,7 +284,34 @@ const styles = StyleSheet.create({
     activeDot: {
         color: '#fff',
         margin: 3
+    },
+    shadow: {
+        shadowColor: '#000',
+        shadowRadius: 3,
+        shadowOffset: {
+            width: 1,
+            height: 1
+        },
+        shadowOpacity: 0.2,
+    },
+    img_24x24: {
+        height: 24,
+        width: 24
+    },
+    hr_bottom: {
+        borderBottomColor: '#f2f2f2',
+        borderBottomWidth: 1
+    },
+    ml_25: {
+        marginLeft: 25
+    },
+    mr_25: {
+        marginRight: 25
+    },
+    color_blue: {
+        color: '#1a8cff'
     }
+
 
 
   });
