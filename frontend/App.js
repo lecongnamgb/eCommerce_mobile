@@ -1,7 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import BottomNavigation from './components/Navigator/BottomNavigation'
-import {View} from 'react-native'
-import LogInScreen from './screens/LogInScreen';
+import HomeStackNavigation from './components/Navigator/HomeStackNavigation';
 
 export default function App() {
   return (

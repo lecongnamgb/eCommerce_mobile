@@ -5,6 +5,7 @@ import UserScreen from '../../screens/UserScreen';
 import HomeScreen from '../../screens/HomeScreen';
 import NotificationScreen from '../../screens/NotificationScreen';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
+import NotiMain from '../notiComponents/NotiMain';
 
 const Tab = createBottomTabNavigator();
 
@@ -24,8 +25,14 @@ export default function BottomNavigation() {
                 }}
             />
             <Tab.Screen 
-                name="Thông báo" 
+                name="Noti" 
                 component={NotificationScreen}
+                listeners= {({navigation}) => ({
+                    tabPress: (e) => {
+                        e.preventDefault();
+                        navigation.navigate('Noti', {screen: 'NotiMain'})
+                    }
+                })}
                 options={{
                     headerShown: false,
                     tabBarLabel: 'Thông báo',
@@ -38,7 +45,6 @@ export default function BottomNavigation() {
                 name="Tôi" 
                 component={UserScreen}
                 options={{
-                    tabBarLabel: 'Tôi',
                     tabBarIcon: ({color}) => (
                         <MaterialCommunityIcons name="account" color={color} size={26} />
   ),

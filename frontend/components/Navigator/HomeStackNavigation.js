@@ -5,6 +5,8 @@ import RecommendListItem from '../homeComponents/RecommendListItem'
 import BillStatus from '../userComponents/BillStatus'
 import SearchScreen from '../../screens/SearchScreen'
 import LogInScreen from '../../screens/LogInScreen'
+import CartScreen from '../../screens/CartScreen'
+import BottomNavigation from './BottomNavigation'
 
 const Stack = createStackNavigator();
 export default function HomeStackNavigation() {
@@ -14,6 +16,15 @@ export default function HomeStackNavigation() {
         <Stack.Screen
             name = {"Home"}
             component = {RecommendListItem}
+            options={
+                {
+                    headerShown: false,
+                }
+            }
+        />
+        <Stack.Screen
+            name = {"Cart"}
+            component = {CartScreen}
             options={
                 {
                     headerShown: false

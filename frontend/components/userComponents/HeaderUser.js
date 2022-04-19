@@ -14,7 +14,6 @@ export default function HeaderUser() {
     const navigation = useNavigation()
   return (
     <SafeAreaView style = {styles.container}>
-        <SeparateView/>
         <View style = {[styles.mainHeader, styles.mt_20]}>
             <TouchableOpacity 
             onPress={() => {

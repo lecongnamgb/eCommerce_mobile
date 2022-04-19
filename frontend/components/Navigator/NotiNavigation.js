@@ -1,16 +1,14 @@
+import { View, Text } from 'react-native'
 import React from 'react'
-import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
-import NotiMain from '../components/notiComponents/NotiMain';
-import CartScreen from './CartScreen';
+import NotiMain from '../notiComponents/NotiMain';
+import CartScreen from '../../screens/CartScreen';
+import { useRoute } from '@react-navigation/native';
 
 const Stack = createStackNavigator();
-
-export default function NotificationScreen({navigation, route}) {
-    console.log(route.state)
+export default function NotiNavigation() {
   return (
-    <NavigationContainer independent = {true}>
-          <Stack.Navigator>
+    <Stack.Navigator>
         <Stack.Screen
             name = {"NotiMain"}
             component = {NotiMain}
@@ -23,12 +21,12 @@ export default function NotificationScreen({navigation, route}) {
         <Stack.Screen
             name = {"Cart"}
             component = {CartScreen}
-            options = {({navigation, route}) => {
-                navigation.setOptions({t})
-            }
+            options = {
+                {
+                    headerShown: false
+                }
             }
         />
     </Stack.Navigator>
-    </NavigationContainer>
   )
 }

@@ -310,10 +310,11 @@ const styles = StyleSheet.create({
     },
     color_blue: {
         color: '#1a8cff'
+    },
+    img_100x100: {
+        width: 100,
+        height: 100
     }
-
-
-
   });
 
 export default styles;
