@@ -3,7 +3,6 @@ import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import NotiMain from '../notiComponents/NotiMain';
 import CartScreen from '../../screens/CartScreen';
-import { useRoute } from '@react-navigation/native';
 
 const Stack = createStackNavigator();
 export default function NotiNavigation() {

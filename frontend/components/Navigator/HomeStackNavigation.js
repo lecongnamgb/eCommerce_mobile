@@ -15,7 +15,7 @@ export default function HomeStackNavigation() {
     >
         <Stack.Screen
             name = {"Home"}
-            component = {RecommendListItem}
+            component = {BottomNavigation}
             options={
                 {
                     headerShown: false,

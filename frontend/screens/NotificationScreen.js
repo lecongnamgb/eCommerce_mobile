@@ -6,8 +6,7 @@ import CartScreen from './CartScreen';
 
 const Stack = createStackNavigator();
 
-export default function NotificationScreen({navigation, route}) {
-    console.log(route.state)
+export default function NotificationScreen() {
   return (
     <NavigationContainer independent = {true}>
           <Stack.Navigator>

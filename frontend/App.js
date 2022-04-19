@@ -5,7 +5,7 @@ import HomeStackNavigation from './components/Navigator/HomeStackNavigation';
 export default function App() {
   return (
         <NavigationContainer independent = {true}>
-            <BottomNavigation/>
+            <HomeStackNavigation/>
         </NavigationContainer>
   );
 }

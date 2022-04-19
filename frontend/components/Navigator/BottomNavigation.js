@@ -2,10 +2,9 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import UserScreen from '../../screens/UserScreen';
-import HomeScreen from '../../screens/HomeScreen';
 import NotificationScreen from '../../screens/NotificationScreen';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import NotiMain from '../notiComponents/NotiMain';
+import RecommendListItem from '../homeComponents/RecommendListItem';
 
 const Tab = createBottomTabNavigator();
 
@@ -15,10 +14,9 @@ export default function BottomNavigation() {
         >
             <Tab.Screen 
                 name = {"Home"}
-                component={HomeScreen}
+                component={RecommendListItem}
                 options={{
                     headerShown: false,
-                    tabBarLabel: 'Home',
                     tabBarIcon: ({color}) => (
                         <MaterialCommunityIcons name="home" color={color} size={26} />
   )
