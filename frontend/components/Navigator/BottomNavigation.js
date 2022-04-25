@@ -5,6 +5,7 @@ import UserScreen from '../../screens/UserScreen';
 import NotificationScreen from '../../screens/NotificationScreen';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import RecommendListItem from '../homeComponents/RecommendListItem';
+import NotiMain from '../notiComponents/NotiMain';
 
 const Tab = createBottomTabNavigator();
 
@@ -24,13 +25,7 @@ export default function BottomNavigation() {
             />
             <Tab.Screen 
                 name="Noti" 
-                component={NotificationScreen}
-                listeners= {({navigation}) => ({
-                    tabPress: (e) => {
-                        e.preventDefault();
-                        navigation.navigate('Noti', {screen: 'NotiMain'})
-                    }
-                })}
+                component={NotiMain}
                 options={{
                     headerShown: false,
                     tabBarLabel: 'Thông báo',

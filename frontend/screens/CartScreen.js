@@ -1,10 +1,11 @@
-import { View, Text, SafeAreaView } from 'react-native'
+import { SafeAreaView } from 'react-native'
 import React from 'react'
 import Cart from '../components/cartComponents/Cart'
+import styles from '../components/styles'
 
 export default function CartScreen() {
   return (
-    <SafeAreaView>
+    <SafeAreaView style = {styles.bg_white}>
         <Cart/>
     </SafeAreaView>
   )

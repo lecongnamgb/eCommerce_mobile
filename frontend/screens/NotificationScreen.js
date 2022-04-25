@@ -22,9 +22,10 @@ export default function NotificationScreen() {
         <Stack.Screen
             name = {"Cart"}
             component = {CartScreen}
-            options = {({navigation, route}) => {
-                navigation.setOptions({t})
-            }
+            options = {
+                {
+                    headerShown: false
+                }
             }
         />
     </Stack.Navigator>

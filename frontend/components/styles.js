@@ -314,6 +314,21 @@ const styles = StyleSheet.create({
     img_100x100: {
         width: 100,
         height: 100
+    },
+    img_16x16: {
+        width: 16,
+        height: 16
+    },
+    img_12x12: {
+        width: 12,
+        height: 12
+    },
+    filterBar_active: {
+        borderBottomColor: '#e62e00',
+        borderBottomWidth: 2
+    },
+    filterBar_text_active: {
+        color: '#e62e00'
     }
   });
 

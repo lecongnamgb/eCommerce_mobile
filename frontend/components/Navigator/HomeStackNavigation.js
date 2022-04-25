@@ -7,6 +7,7 @@ import SearchScreen from '../../screens/SearchScreen'
 import LogInScreen from '../../screens/LogInScreen'
 import CartScreen from '../../screens/CartScreen'
 import BottomNavigation from './BottomNavigation'
+import ResultSearchScreen from '../../screens/ResultSearchScreen'
 
 const Stack = createStackNavigator();
 export default function HomeStackNavigation() {
@@ -14,7 +15,7 @@ export default function HomeStackNavigation() {
     <Stack.Navigator
     >
         <Stack.Screen
-            name = {"Home"}
+            name = {"MainHome"}
             component = {BottomNavigation}
             options={
                 {
@@ -38,6 +39,15 @@ export default function HomeStackNavigation() {
         <Stack.Screen
             name = {"Search"}
             component= {SearchScreen}
+            options = {
+                {
+                    headerShown: false,
+                }
+            }
+        />
+        <Stack.Screen
+            name = {"resultSearch"}
+            component= {ResultSearchScreen}
             options = {
                 {
                     headerShown: false,

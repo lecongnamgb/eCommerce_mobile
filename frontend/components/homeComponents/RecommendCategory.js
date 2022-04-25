@@ -1,10 +1,12 @@
-import { View, Image, Text } from 'react-native'
+import { View, Image, Text, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import styles from '../styles'
 
 export default function RecommendCategory(props) {
   return (
-    <View style = {[styles.bg_lightGrey, {width: 80, height: 100, alignItems: 'center'}, styles.alignCenterItemVertically]}>
+    <View 
+        style = {[styles.bg_lightGrey, {width: 80, height: 100, alignItems: 'center'}, styles.alignCenterItemVertically]}
+    >
         <View style = {[styles.bg_white, {width: 73, alignItems: 'center', borderRadius: 3}, props.active ? {borderColor: 'red', borderWidth: 1}:{}]}>
             <View style= {{width: 70, height: 45, alignItems: 'center', margin: 5, marginBottom: 0}}>
                 <View style = {[styles.bg_lightGrey, styles.rounded, {width: 40, height: 40}, styles.alignCenterItem, styles.alignCenterItemVertically]}>

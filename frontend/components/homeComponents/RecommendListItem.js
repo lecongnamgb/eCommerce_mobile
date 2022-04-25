@@ -80,10 +80,10 @@ const listData = [
 export default function RecommendListItem({navigation}) {
   return (
       <SafeAreaView style = {{backgroundColor: '#fff'}}>
-        <SearchForm width = {"75%"}/>
+          <SearchForm width = {"75%"}/>
         <FlatList
                 data={listData}
-                renderItem={({item}) => <RecommendItem recommendItem = {item}/>}
+                renderItem={({item}) => <RecommendItem recommendItem = {item} containRating = {false}/>}
                 keyExtractor={item => item.id}
                 numColumns={2}
                 scrollEnabled={true}
