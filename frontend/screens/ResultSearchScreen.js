@@ -6,11 +6,12 @@ import { useNavigation } from '@react-navigation/native'
 import FliterBar from '../components/searchComponents/FliterBar'
 import AgentIntro from '../components/searchComponents/AgentIntro'
 import RecommendItem from '../components/homeComponents/RecommendItem'
+import CategoryItem from '../components/homeComponents/CategoryItem'
 
 export default function ResultSearchScreen({route}) {
     const listData = [
         {
-            id: 1,
+            id: 101,
             sourceIcon: require('../assets/icon/ao123.png'),
             title: "Áo thun chất liệu siêu cấp vip pro, mặc co giãn thoải mái thôi rồi",
             price: 1000,
@@ -19,7 +20,7 @@ export default function ResultSearchScreen({route}) {
             location: "Hà Nội",
         },
         {
-            id: 2,
+            id: 102,
             sourceIcon: require('../assets/icon/ao123.png'),
             title: "Áo thun chất liệu siêu cấp vip pro, mặc co giãn thoải mái thôi rồi",
             price: 1000,
@@ -28,7 +29,7 @@ export default function ResultSearchScreen({route}) {
             location: "Hà Nội",
         },
         {
-            id: 3,
+            id: 103,
             sourceIcon: require('../assets/icon/ao123.png'),
             title: "Áo thun chất liệu siêu cấp vip pro, mặc co giãn thoải mái thôi rồi",
             price: 1000,
@@ -37,7 +38,7 @@ export default function ResultSearchScreen({route}) {
             location: "Hà Nội",
         },
         {
-            id: 4,
+            id: 104,
             sourceIcon: require('../assets/icon/ao123.png'),
             title: "Áo thun chất liệu siêu cấp vip pro, mặc co giãn thoải mái thôi rồi",
             price: 1000,
@@ -46,7 +47,7 @@ export default function ResultSearchScreen({route}) {
             location: "Hà Nội",
         },
         {
-            id: 5,
+            id: 105,
             sourceIcon: require('../assets/icon/ao123.png'),
             title: "Áo thun chất liệu siêu cấp vip pro, mặc co giãn thoải mái thôi rồi",
             price: 1000,
@@ -55,7 +56,7 @@ export default function ResultSearchScreen({route}) {
             location: "Hà Nội",
         },
         {
-            id: 6,
+            id: 106,
             sourceIcon: require('../assets/icon/ao123.png'),
             title: "Áo thun chất liệu siêu cấp vip pro, mặc co giãn thoải mái thôi rồi",
             price: 1000,
@@ -64,7 +65,7 @@ export default function ResultSearchScreen({route}) {
             location: "Hà Nội",
         },
         {
-            id: 7,
+            id: 107,
             sourceIcon: require('../assets/icon/ao123.png'),
             title: "Áo thun chất liệu siêu cấp vip pro, mặc co giãn thoải mái thôi rồi",
             price: 1000,
@@ -73,7 +74,7 @@ export default function ResultSearchScreen({route}) {
             location: "Hà Nội",
         },
         {
-            id: 8,
+            id: 108,
             sourceIcon: require('../assets/icon/ao123.png'),
             title: "Áo thun chất liệu siêu cấp vip pro, mặc co giãn thoải mái thôi rồi",
             price: 1000,
@@ -82,7 +83,7 @@ export default function ResultSearchScreen({route}) {
             location: "Hà Nội",
         },
         {
-            id: 9,
+            id: 109,
             sourceIcon: require('../assets/icon/ao123.png'),
             title: "Áo thun chất liệu siêu cấp vip pro, mặc co giãn thoải mái thôi rồi",
             price: 1000,
@@ -91,7 +92,7 @@ export default function ResultSearchScreen({route}) {
             location: "Hà Nội",
         },
         {
-            id: 10,
+            id: 110,
             sourceIcon: require('../assets/icon/ao123.png'),
             title: "Áo thun chất liệu siêu cấp vip pro, mặc co giãn thoải mái thôi rồi",
             price: 1000,
@@ -111,10 +112,10 @@ export default function ResultSearchScreen({route}) {
             <FlatList
                 data={listData}
                 renderItem={({item}) => <RecommendItem recommendItem = {item} containRating = {true}/>}
-                keyExtractor={item => item.id}
                 numColumns={2}
                 scrollEnabled={true}
-                ListHeaderComponent= {AgentIntro}
+                keyExtractor ={item => item.id}
+                ListHeaderComponent= {<AgentIntro seeMore = {true}/>}
                 ListFooterComponent = {<View style = {{height: 100}}></View>}
         />
     </SafeAreaView>

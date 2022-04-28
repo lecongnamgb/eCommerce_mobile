@@ -10,10 +10,10 @@ export default function FliterBar() {
     const [ascending, setAsending] = useState("");
     const [currentFocus, setCurrentFocus] = useState([true, false, false, false])
   return (
-    <View style = {[styles.mt_15, styles.flex_row]}>
+    <View style = {[styles.mt_15, styles.flex_row, styles.hr_bottom]}>
         <TouchableOpacity 
             activeOpacity={1}
-            style = {[{ width: '25%'}, styles.pb_15, currentFocus[0] ? styles.filterBar_active : null]}
+            style = {[{ width: '26%'}, styles.pb_15, currentFocus[0] ? styles.filterBar_active : null]}
             onPress = {() => {
                 setCurrentFocus([true, false, false, false])
                 setAsending("");

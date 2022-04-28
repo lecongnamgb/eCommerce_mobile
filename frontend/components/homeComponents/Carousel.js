@@ -9,10 +9,10 @@ import React, { useState } from 'react';
 
 import styles from '../styles';
 
-const {width} = Dimensions.get("window");
-const height = width * 0.3;
 
-export default function Carousel() {
+export default function Carousel(props) {
+    const {width} = Dimensions.get("window");
+    const height = props.listData == null ? width * 0.3 :width * 1.2;
     const images = [
         {
             id: 1,
@@ -54,11 +54,10 @@ const change = ({nativeEvent}) => {
         <Image
             key={index}
             source={item.sourceIcon}
-            style={{width, height, resizeMode: 'contain'}}
+            style={ props.listData == null ? {width, height, resizeMode: 'contain'} : {width, height: 500}}
         />
     )
-
-    if(images && images.length) {
+        var listData = props.listData == null ? images : props.listData;
     return (
         <SafeAreaView style={{width, height}}>
           <FlatList
@@ -69,13 +68,13 @@ const change = ({nativeEvent}) => {
             decelerationRate={"fast"}
             onScroll={change}
             showsHorizontalScrollIndicator={false}
-            data={images}
+            data={listData}
             renderItem={renderItem}
             keyExtractor={item => item.id}
           />
-          <View style = {{flexDirection: 'row', position: 'absolute', bottom: 0, alignSelf: 'center'}}>
+           <View style = {{flexDirection: 'row', position: 'absolute', bottom: 0, alignSelf: 'center'}}>
                  {
-                     images.map((image, key) => (
+                     listData.map((image, key) => (
                          <Text 
                              key = {key}
                              style = {key == active ? styles.activeDot : styles.dot}
@@ -87,7 +86,7 @@ const change = ({nativeEvent}) => {
              </View>
         </SafeAreaView>
       );
-                }
+                
                 return null;
 
 }

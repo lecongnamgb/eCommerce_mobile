@@ -1,11 +1,15 @@
-import { View, Text, Dimensions, Image } from 'react-native'
+import { View, Text, Dimensions, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import styles from '../styles';
+import { useNavigation } from '@react-navigation/native';
+import PromoIcon from './PromoIcon';
+import RatingStar from '../productComponents/RatingStar';
 
 const {width} = Dimensions.get("window");
 
 
 export default function RecommendItem(props) {
+    const navigation = useNavigation();
     var {recommendItem} = props
     var stars = [];
     for (let i = 1; i <= recommendItem.rating; i++) {
@@ -15,34 +19,20 @@ export default function RecommendItem(props) {
     if (!Number.isInteger(recommendItem.rating)) {
         hasHalfStar = true;
     }
-    var convertPrice = price => {
-        var convertedPrice = price.toString();
-        var count = 0;
-        var ans = "";
-        for (var i = convertedPrice.length - 1; i >= 0; i--) {
-            count++;
-            if (count == 3) {
-                ans[i] = convertedPrice[i] +".";
-                count = 0;
-            } else {
-                ans[i] = convertedPrice[i];
-            }
-        }
-        return ans;
-    }
   return (
-    <View style={[{width: width/2}, styles.alignCenterItem,styles.bg_lightGrey, {padding: 3}]}>
+    <TouchableOpacity 
+        style={[{width: width/2}, styles.alignCenterItem,styles.bg_lightGrey, {padding: 3}]}
+        onPress = {() => {
+            navigation.navigate('Product')
+        }}
+    >
         <View>
         <Image
             source={recommendItem.sourceIcon}
             style={{width: width/2 - 6, height: width/2 - 6, resizeMode: 'contain', backgroundColor: '#fff'}}
         />
-        <View style = {{position: 'absolute', top: 3, right: 3}}>
-            <View style = {[styles.promo_icon_body]}>
-                <Text style = {{textAlign: 'center', color: 'red', fontSize: 12}}>23%</Text>
-                <Text style = {{textAlign: 'center', color: '#fff', fontSize: 12}}>GIẢM</Text>
-                </View>
-            <View style = {styles.promo_icon}/>
+        <View style = {{position: 'absolute', top: 0, right: 0}}>
+           <PromoIcon/>
         </View>
         <View style= {[styles.pt_10, styles.pl_10, styles.pr_10, styles.pb_10, styles.bg_white]}>
             <View style = {[{width: '100%', height: 50}]}>
@@ -52,12 +42,7 @@ export default function RecommendItem(props) {
              <View>
                 <Text style = {{color: 'red', fontSize: 20}}>{recommendItem.price}đ</Text>
                 <View style = {[styles.flex_row, styles.mt_10]}>
-                    {
-                        stars.map(item => <Image source = {require('../../assets/icon/1star.png')} style = {styles.img_12x12}/>)
-                    }
-                    {
-                        hasHalfStar ? <Image source = {require('../../assets/icon/halfStar.png')} style = {styles.img_12x12}/> : null
-                    }
+                    <RatingStar stars = {recommendItem.rating}/>
                         <Text style = {{fontSize: 12, paddingLeft: 10}}>Đã bán {recommendItem.quantitySold >= 1000 ? recommendItem.quantitySold / 1000 + "k": recommendItem.quantitySold}</Text>
                 </View>
                 <View style = {[styles.mt_10, styles.flex_row]}>
@@ -84,6 +69,6 @@ export default function RecommendItem(props) {
             }
         </View>
         </View>
-    </View>
+    </TouchableOpacity>
   )
 }

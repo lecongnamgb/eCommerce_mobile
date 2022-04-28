@@ -299,7 +299,7 @@ const styles = StyleSheet.create({
         width: 24
     },
     hr_bottom: {
-        borderBottomColor: '#f2f2f2',
+        borderBottomColor: '#bfbfbf',
         borderBottomWidth: 1
     },
     ml_25: {
@@ -329,6 +329,10 @@ const styles = StyleSheet.create({
     },
     filterBar_text_active: {
         color: '#e62e00'
+    },
+    img_124x124: {
+        width: 124,
+        height: 124
     }
   });
 
