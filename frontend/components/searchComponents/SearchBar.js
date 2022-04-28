@@ -19,7 +19,7 @@ export default function SearchBar(props) {
                 autoFocus = {props.focus}
                 onChangeText={text => setInput(text)}
                 onSubmitEditing={handleSubmitText}
-                value = {props.value}
+                defaultValue = {props.value}
                 style = {[
                         {
                             width: props.widthSearchInput, 
