@@ -8,7 +8,7 @@ import { useNavigation } from '@react-navigation/native'
 export default function NotiHeader(props) {
     const navigation = useNavigation();
   return (
-      <View style = {styles.hr_bottom}>
+      <View style = {styles.hr_light_bottom}>
         <View style = {[styles.bg_white]}>
             <Text style = {[{textAlign: 'center', fontSize: 20}, styles.mb_15, styles.mt_15]}>{props.title}</Text>
             <View style = {{position: 'absolute', right: 15}}>

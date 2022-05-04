@@ -3,6 +3,7 @@ import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import MainUserScreen from '../userComponents/MainUserScreen';
 import LogInScreen from '../../screens/LogInScreen';
+import SignInScreen from '../../screens/SignInScreen';
 
 const Stack = createStackNavigator();
 export default function UserStackNavigation() {
@@ -21,6 +22,15 @@ export default function UserStackNavigation() {
         <Stack.Screen
             name = {"LogIn"}
             component = {LogInScreen}
+            options= {
+                {
+                    headerShown: false
+                }
+            }
+        />
+         <Stack.Screen
+            name = {"SignIn"}
+            component = {SignInScreen}
             options= {
                 {
                     headerShown: false

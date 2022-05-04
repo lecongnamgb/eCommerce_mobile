@@ -302,6 +302,10 @@ const styles = StyleSheet.create({
         borderBottomColor: '#bfbfbf',
         borderBottomWidth: 1
     },
+    hr_light_bottom: {
+        borderBottomColor: '#e6e6e6',
+        borderBottomWidth: 1
+    },
     ml_25: {
         marginLeft: 25
     },
