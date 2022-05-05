@@ -13,6 +13,9 @@ export default function NormalField(props) {
                 style = {[{width: '90%', fontSize: 16, height: 30}]}
                 placeholder = {props.plhdTitle}
                 autoFocus = {props.focus}
+                value = {props.value}
+                onChangeText = {props.handleOnChangeText}
+                autoCapitalize = {'none'}
 
             />
         </View>

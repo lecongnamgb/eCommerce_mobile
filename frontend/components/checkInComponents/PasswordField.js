@@ -20,6 +20,9 @@ export default function PasswordField(props) {
                         style = {[{fontSize: 16, height: 30, width: '70%'}]}
                         placeholder = {props.plhdTitle}
                         secureTextEntry={showPassword ? false : true}
+                        value = {props.value}
+                        onChangeText = {props.handleOnChangeText}
+                        autoCapitalize = {'none'}
                     />
                     <TouchableOpacity
                         style = {[styles.pl_15, styles.pr_15]}
