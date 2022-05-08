@@ -117,12 +117,13 @@ export default function EvaluationScreen() {
     ]
   return (
     <SafeAreaView style = {styles.bg_white}>
+          <Header title = {"Đánh giá"} canBack = {true}/>
         <ScrollView>
-            <Header title = {"Đánh giá"} canBack = {true}/>
             <View style = {[styles.flex_row, styles.pb_10, styles.pt_10, styles.hr_bottom]}>
                 {ratingData.map((item, index) => 
                 <TouchableOpacity 
                     activeOpacity={1}
+                    key = {index}
                     onPress = {() => {
                        setRatingData(
                             ratingData.map((subItem, subIndex) => {
@@ -135,7 +136,7 @@ export default function EvaluationScreen() {
                        )
                     }}
                 >     
-                    <StarCategory rating = {item} key = {index}/>
+                    <StarCategory rating = {item}/>
                 </TouchableOpacity>
                 )}
             </View>

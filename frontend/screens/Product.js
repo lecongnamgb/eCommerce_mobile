@@ -33,7 +33,7 @@ export default function Product() {
   return (
     <SafeAreaView style = {[styles.bg_white]}>
         <View style = {{position: 'absolute', top: 35, right: 1, left: 1, zIndex: 2}}>
-            <HeaderProduct/>
+            <HeaderProduct numOfProductsInCart = {2}/>
         </View>
         <View style = {{position: 'absolute', bottom: 0, zIndex: 1}}>
             <FooterProduct/>

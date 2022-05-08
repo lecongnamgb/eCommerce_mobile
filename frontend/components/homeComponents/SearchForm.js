@@ -41,7 +41,7 @@ export default function SearchForm(props) {
                         </View>
                     </View>
                 </TouchableOpacity>
-                <CartAndConversation/>
+                <CartAndConversation numOfProductsInCart = {2}/>
                 </View>
         </View>
     </SafeAreaView>

@@ -3,7 +3,7 @@ import React from 'react'
 import styles from '../styles'
 import { useNavigation } from '@react-navigation/native'
 
-export default function HeaderProduct() {
+export default function HeaderProduct(props) {
     const navigation = useNavigation();
   return (
     <SafeAreaView style = {[styles.flex_row, styles.m_15]}>
@@ -30,6 +30,12 @@ export default function HeaderProduct() {
                 source = {require('../../assets/icon/cart_white.png')}
                 style = {styles.img_24x24}
             />
+            {props.numOfProductsInCart >= 1 ? 
+            <View style = {[{width: 15, height: 15, backgroundColor: 'red', position: 'absolute', top: 0, right: 0}, styles.rounded, styles.alignCenterItem, styles.alignCenterItemVertically]}>
+                <Text style = {{color: '#fff'}}>{props.numOfProductsInCart}</Text>
+            </View>
+            : null
+            }
         </TouchableOpacity>
     </SafeAreaView>
   )

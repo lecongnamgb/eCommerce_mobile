@@ -56,7 +56,7 @@ export default function LogInScreen() {
           <TouchableOpacity 
             style = {[{backgroundColor: '#ff8000', height: 40, marginLeft: 25, marginRight: 25}, styles.alignCenterItemVertically]}
             onPress = {() => {
-                const doesExist = false;
+                var doesExist = false;
                 listData.map(userAccount => {
                     if (userAccount.username === username && userAccount.password === password) {
                         doesExist = true;

@@ -81,7 +81,7 @@ const listData = [
 export default function RecommendListItem({navigation}) {
   return (
       <SafeAreaView style = {{backgroundColor: '#fff'}}>
-          <SearchForm width = {"75%"}/>
+          <SearchForm width = {"85%"}/>
           <BottomNavigator 
             height = {150}
             currentActive = {"Home"}

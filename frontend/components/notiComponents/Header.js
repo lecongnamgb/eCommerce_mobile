@@ -13,7 +13,7 @@ export default function NotiHeader(props) {
             <Text style = {[{textAlign: 'center', fontSize: 20}, styles.mb_15, styles.mt_15]}>{props.title}</Text>
             <View style = {{position: 'absolute', right: 15}}>
                 {
-                    props.containCart? <CartAndConversation/> : null
+                    props.containCart? <CartAndConversation numOfProductsInCart = {2}/> : null
                 }         
             </View>
             {props.canBack?

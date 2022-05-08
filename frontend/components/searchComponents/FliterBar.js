@@ -5,6 +5,8 @@ import {useState} from 'react'
 import up_and_down_arrow from '../../assets/icon/up_and_down_arrow.png'
 import down_arrow from '../../assets/icon/down_arrow.png'
 import up_arrow from '../../assets/icon/up_arrow.png'
+import up_arrow_focus from '../../assets/icon/up_arrow_focus.png'
+import down_arrow_focus from '../../assets/icon/down_arrow_focus.png'
 
 export default function FliterBar() {
     const [ascending, setAsending] = useState("");
@@ -63,12 +65,12 @@ export default function FliterBar() {
         >
             <View style = {[{borderRightWidth: 1, borderRightColor: '#ccc'}, styles.pl_15, styles.pr_15]}>
                 <Text 
-                style = {[{textAlign: 'center'}]}
+                style = {[{textAlign: 'center'}, currentFocus[3] == true ? {color: 'red'}: null]}
                 >
                     Giá {" "}
                     <View>
                         <Image
-                            source = {ascending === "" ? up_and_down_arrow : ascending === true ? up_arrow : down_arrow}
+                            source = {ascending === "" ? up_and_down_arrow : ascending === true ? up_arrow_focus : down_arrow_focus}
                             style = {[styles.img_16x16, {top: 3}]}
                         />
                     </View>

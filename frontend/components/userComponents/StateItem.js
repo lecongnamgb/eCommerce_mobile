@@ -10,6 +10,12 @@ export default function StateItem(props) {
                 source = {props.sourceIcon}
                 style = {[styles.icon_tag]}
             />
+            {props.numOfProductsInCart >= 1 ? 
+            <View style = {[{width: 15, height: 15, backgroundColor: 'red', position: 'absolute', top: 10, right: -5}, styles.rounded, styles.alignCenterItem, styles.alignCenterItemVertically]}>
+                <Text style = {{color: '#fff'}}>{props.numOfProductsInCart}</Text>
+            </View>
+            : null
+            }
         </View>
         <Text style = {{fontSize: 12}}>{props.title}</Text>
     </View>

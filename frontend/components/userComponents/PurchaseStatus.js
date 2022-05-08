@@ -13,14 +13,17 @@ export default function PurchaseStatus() {
         <StateItem 
             sourceIcon = {pendingIcon}
             title = {"Chờ xác nhận"}
+            numOfProductsInCart = {2}
         />
         <StateItem
             sourceIcon = {waitingIcon}
             title = {"Chờ lấy hàng"}
+            numOfProductsInCart = {5}
             />
         <StateItem
             sourceIcon = {shippingIcon}
             title = {"Đang giao"}
+            numOfProductsInCart = {10}
             />
         <StateItem
             sourceIcon = {reviewIcon}
