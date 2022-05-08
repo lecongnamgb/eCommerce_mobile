@@ -135,11 +135,11 @@ export default function EvaluationScreen() {
                        )
                     }}
                 >     
-                    <StarCategory rating = {item} key = {item.id}/>
+                    <StarCategory rating = {item} key = {index}/>
                 </TouchableOpacity>
                 )}
             </View>
-            {listData.map(item => <Evaluation evaluation = {item} key = {item.id}/>)}
+            {listData.map((item, index) => <Evaluation evaluation = {item} key = {index}/>)}
         </ScrollView>
     </SafeAreaView>
   )

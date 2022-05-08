@@ -6,25 +6,29 @@ import BillStatus from '../userComponents/BillStatus'
 import SearchScreen from '../../screens/SearchScreen'
 import LogInScreen from '../../screens/LogInScreen'
 import CartScreen from '../../screens/CartScreen'
-import BottomNavigation from './BottomNavigation'
+
 import ResultSearchScreen from '../../screens/ResultSearchScreen'
 import Product from '../../screens/Product'
 import EvaluationScreen from '../../screens/EvaluationScreen'
+import NotiMain from '../notiComponents/NotiMain'
+import MainUserScreen from '../userComponents/MainUserScreen'
+import SignInScreen from '../../screens/SignInScreen'
+import EditInfoScreen from '../../screens/EditInfoScreen'
 
 const Stack = createStackNavigator();
 export default function HomeStackNavigation() {
   return (
     <Stack.Navigator
     >
-        <Stack.Screen
-            name = {"MainHome"}
-            component = {BottomNavigation}
-            options={
-                {
-                    headerShown: false,
-                }
+    <Stack.Screen
+        name = {"Home"}
+        component = {RecommendListItem}
+        options={
+            {
+                headerShown: false,
             }
-        />
+        }
+    />
         <Stack.Screen
             name = {"Cart"}
             component = {CartScreen}
@@ -77,9 +81,51 @@ export default function HomeStackNavigation() {
          <Stack.Screen
             name = {"LogIn"}
             component= {LogInScreen}
+
             options = {
                 {
                     headerShown: false,
+                
+                }
+            }
+        />
+         <Stack.Screen
+            name = {"NotiMain"}
+            component= {NotiMain}
+
+            options = {
+                {
+                    headerShown: false,
+                
+                }
+            }
+        />
+        <Stack.Screen
+            name = {"User"}
+            component= {MainUserScreen}
+
+            options = {
+                {
+                    headerShown: false,
+                
+                }
+            }
+        />
+          <Stack.Screen
+            name = {"SignIn"}
+            component = {SignInScreen}
+            options= {
+                {
+                    headerShown: false
+                }
+            }
+        />
+        <Stack.Screen
+            name = {"EditInfo"}
+            component = {EditInfoScreen}
+            options= {
+                {
+                    headerShown: false
                 }
             }
         />

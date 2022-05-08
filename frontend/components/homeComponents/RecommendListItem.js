@@ -3,6 +3,7 @@ import React from 'react'
 import RecommendItem from './RecommendItem'
 import RecommendToday from './RecommendToday'
 import SearchForm from './SearchForm'
+import BottomNavigator from '../Navigator/BottomNavigator'
 
 const listData = [
     {
@@ -81,6 +82,10 @@ export default function RecommendListItem({navigation}) {
   return (
       <SafeAreaView style = {{backgroundColor: '#fff'}}>
           <SearchForm width = {"75%"}/>
+          <BottomNavigator 
+            height = {150}
+            currentActive = {"Home"}
+          />
         <FlatList
                 data={listData}
                 renderItem={({item}) => <RecommendItem recommendItem = {item} containRating = {false}/>}
@@ -88,6 +93,7 @@ export default function RecommendListItem({navigation}) {
                 numColumns={2}
                 scrollEnabled={true}
                 ListHeaderComponent={RecommendToday}
+                ListFooterComponent = {<View style = {{height: 110}}/>}
         />
    </SafeAreaView>
   )

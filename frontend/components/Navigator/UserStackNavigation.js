@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 import MainUserScreen from '../userComponents/MainUserScreen';
 import LogInScreen from '../../screens/LogInScreen';
 import SignInScreen from '../../screens/SignInScreen';
+import EditInfoScreen from '../../screens/EditInfoScreen';
 
 const Stack = createStackNavigator();
 export default function UserStackNavigation() {
@@ -24,19 +25,12 @@ export default function UserStackNavigation() {
             component = {LogInScreen}
             options= {
                 {
-                    headerShown: false
+                    headerShown: false,   
                 }
+                
             }
         />
-         <Stack.Screen
-            name = {"SignIn"}
-            component = {SignInScreen}
-            options= {
-                {
-                    headerShown: false
-                }
-            }
-        />
+       
     </Stack.Navigator>
   )
 }

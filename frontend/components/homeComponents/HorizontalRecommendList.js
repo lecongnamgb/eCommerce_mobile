@@ -4,7 +4,8 @@ import RecommendCategory from './RecommendCategory'
 import {useState, useRef} from 'react'
 
 export default function HorizontalRecommendList() {
-    const flatListRef = useRef(null)
+    const flatListRef = useRef(null);
+    const [currentProductLine, setCurrentProductLine] = useState(0);
 
 
     const [listData, setListData] = useState([
@@ -85,6 +86,7 @@ export default function HorizontalRecommendList() {
             <TouchableOpacity
                 activeOpacity={1}
                 onPress = {() => {
+                    setCurrentProductLine(index);
                     flatListRef.current.scrollToIndex({animated: true, index,  
                         viewOffset: Dimensions.get('screen').width / 2.5,})
                     setListData(

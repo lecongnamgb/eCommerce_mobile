@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, 
     Dimensions,
     Text,
+    TouchableOpacity,
     ScrollView, 
     View, 
     SafeAreaView} from 'react-native';
@@ -20,10 +21,17 @@ import voucherIcon from '../../assets/icon/voucher.png';
 import profileIcon from '../../assets/icon/profile.png';
 import assistantIcon from '../../assets/icon/assistant.png';
 import questionMarkIcon from '../../assets/icon/question.png';
+import { useNavigation } from '@react-navigation/native';
+import BottomNavigator from '../Navigator/BottomNavigator';
 
 export default function MainUserScreen() {
+    const navigation = useNavigation();
   return (
-    <SafeAreaView>
+    <SafeAreaView style = {{height: '100%'}}>
+        <BottomNavigator 
+            height = {90}
+            currentActive = {"User"}
+        />
     <ScrollView>
             <HeaderUser/>
             <SeparateView/>
@@ -66,10 +74,16 @@ export default function MainUserScreen() {
                 title = {"Đánh giá của tôi"}
             />
             <SeparateView/>
-            <UserOptionTag 
-                sourceIcon = {profileIcon}
-                title = {"Thiết lập tài khoản"}
-            />
+            <TouchableOpacity
+                onPress={() => {
+                    navigation.navigate("EditInfo");
+                }}
+            >
+                <UserOptionTag 
+                    sourceIcon = {profileIcon}
+                    title = {"Thiết lập tài khoản"}
+                />
+            </TouchableOpacity>
             <UserOptionTag 
                 sourceIcon = {questionMarkIcon}
                 title = {"Trung tâm trợ giúp"}
@@ -78,7 +92,7 @@ export default function MainUserScreen() {
                 sourceIcon = {assistantIcon}
                 title = {"Trò chuyện với Shopee"}
             />
-
+               <View style = {{height: 50}}/>
         </ScrollView>
     </SafeAreaView>
   )

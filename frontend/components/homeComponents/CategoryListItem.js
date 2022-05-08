@@ -1,10 +1,11 @@
-import { View, Text, Image, SafeAreaView, ScrollView, FlatList } from 'react-native'
+import { View, Text, Image, SafeAreaView, ScrollView, FlatList, TouchableOpacity } from 'react-native'
 import React from 'react'
 import right_arrow from '../../assets/icon/right_arrow.png'
 import styles from '../styles'
 import CategoryItem from './CategoryItem'
 import SeparateView from '../userComponents/SeparateView'
 import Carousel from './Carousel'
+import { useNavigation } from '@react-navigation/native'
 
 const listData = [
     {
@@ -60,6 +61,7 @@ const listData = [
 ]
 
 export default function CategoryListItem() {
+    const navigation = useNavigation();
   return (
     <SafeAreaView>
         <Carousel/>
@@ -82,7 +84,13 @@ export default function CategoryListItem() {
                 showsHorizontalScrollIndicator={false}
                 numColumns={Math.ceil(listData.length / 2)}
                 renderItem={({item}) => 
-                    <CategoryItem title = {item.title} sourceIcon = {item.sourceIcon}/>
+                    <TouchableOpacity
+                        onPress = {() => {
+                            navigation.navigate('resultSearch', {text: item.title})
+                        }}
+                    >
+                        <CategoryItem title = {item.title} sourceIcon = {item.sourceIcon}/>
+                    </TouchableOpacity>
                 }
                 keyExtractor={item => `${item.id}`}
             />

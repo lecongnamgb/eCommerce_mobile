@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     container: {
-        height: 150,
+        height: 110,
         backgroundColor: '#87CEFA'
     },
     bottom: {
@@ -301,6 +301,10 @@ const styles = StyleSheet.create({
     hr_bottom: {
         borderBottomColor: '#bfbfbf',
         borderBottomWidth: 1
+    },
+    hr_top: {
+        borderTopColor: '#bfbfbf',
+        borderTopWidth: 1
     },
     hr_light_bottom: {
         borderBottomColor: '#e6e6e6',
