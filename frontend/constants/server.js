@@ -1,80 +1,142 @@
-const SERVER_URL = {
-  API_SERVER: "http://localhost:5000/",
-};
-
-const SERVICE_URL = {
+export const SERVICE_URL = {
+  API_SERVER: "http://localhost:8000/",
+  CLIENT_AUTH_PREFIX: "client-auth/",
+  JUDGE_PREFIX: "judge/",
+  LIKE_PREFIX: "like/",
+  MEMBER_PREFIX: "member/",
+  NOTIFICATION_PREFIX: "notification/",
+  ORDER_PREFIX: "order/",
+  ORDER_CART_PREFIX: "order-cart/",
+  PRODUCT_PREFIX: "product/",
+  PRODUCTLINE_PREFIX: "product-line/",
+  VOUCHER_PREFIX: "voucher/",
   CLIENT_AUTH_SERVICES: {
-    PREFIX: "client-auth/",
     SIGN_IN: {
-      URL: PREFIX + "signup",
+      URL: "client-auth/signup",
       METHOD: "POST",
     },
     SIGN_UP: {
-      URL: PREFIX + "signup",
+      URL: "signup",
       METHOD: "POST",
     },
     CHANGE_PASSWORD: {
-      URL: PREFIX + "change-password",
+      URL: "change-password",
       METHOD: "POST",
     },
     REFRESH_TOKEN: {
-      URL: PREFIX + "refresh-access-token",
+      URL: "refresh-access-token",
       METHOD: "POST",
     },
   },
   JUDGE_SERVICES: {
-    PREFIX: "judge/",
     POST_JUDGE: {
-      URL: PREFIX + "post-judge",
+      URL: "post-judge",
       METHOD: "POST",
     },
     DELETE_JUDGE_BY_ID: {
-        URL: PREFIX + "delete-judge/",
-        METHOD: "DELETE"
+      URL: "delete-judge/",
+      METHOD: "DELETE",
     },
     GET_JUDGE: {
-        URL: PREFIX + "get-judge",
-        METHOD: "GET"
+      URL: "get-judge",
+      METHOD: "GET",
     },
     GET_BY_ID: {
-        URL: PREFIX + "/",
-        METHOD: "GET"
-    }
+      URL: "/",
+      METHOD: "GET",
+    },
   },
 
   LIKE_SERVICES: {
-      PREFIX: "like/",
-      LIKE_PRODUCT_BY_ID: {
-        URL: PREFIX + "like-product/",
-        METHOD: "POST"
-      }
+    LIKE_PRODUCT_BY_ID: {
+      URL: "like-product/",
+      METHOD: "POST",
+    },
   },
 
   MEMBER_SERVICES: {
-      PREFIX: "member/",
-      GET_PERSONAL_INFO: {
-        URL: PREFIX + "get-personal-info",
-        METHOD: "GET"
-      },
-      REGISTER_SHOP: {
-          URL: PREFIX + "register-shop",
-          METHOD: "POST"
-      }
+    GET_PERSONAL_INFO: {
+      URL: "get-personal-info",
+      METHOD: "GET",
+    },
+    REGISTER_SHOP: {
+      URL: "register-shop",
+      METHOD: "POST",
+    },
   },
 
   ORDER_SERVICES: {
-    PREFIX: "order/",
     GET_ORDER: {
-        URL: PREFIX,
-        METHOD: "GET"
+      URL: "",
+      METHOD: "GET",
     },
     ORDER_PRODUCT: {
-        URL: PREFIX,
-        METHOD: "POST"
-    }
+      URL: "",
+      METHOD: "POST",
+    },
   },
 
-  
-};
+  ORDER_CART_SERVICES: {
+    ADD_PRODUCT_TO_CART: {
+      URL: "add-products-to-cart",
+      METHOD: "POST",
+    },
+    DELETE_FROM_CART: {
+      URL: "delete-from-cart/",
+      METHOD: "DELETE",
+    },
+    GET_ALL_PRODUCTS_IN_CART: {
+      URL: "get-all-products-in-cart",
+      METHOD: "GET",
+    },
+    CHANGE_QUANTITY_PRODUCTS: {
+      URL: "change-quantity-products",
+      METHOD: "PUT",
+    },
+  },
 
-export default SERVER_URL;
+  PRODUCT_SERVICES: {
+    GET_ALL_PRODUCTS: {
+      URL: "get-all-products",
+      METHOD: "GET",
+    },
+    ADD_PRODUCTS: {
+      URL: "add-products",
+      METHOD: "POST",
+    },
+    GET_PRODUCT_BY_ID: {
+      URL: "get-product/",
+      METHOD: "GET",
+    },
+    USER_DELETE_PRODUCT: {
+      URL: "user-delete-product",
+      METHOD: "DELETE",
+    },
+    CHANGE_PRODUCT_INFO_BY_ID: {
+      URL: "change-product-info/",
+      METHOD: "PATCH",
+    },
+    RECENT_VISITED_BY_ID: {
+      URL: "recent-visited/",
+      METHOD: "POST",
+    },
+    GET_RECENT_VISITED: {
+      URL: "get-recent-visited",
+      METHOD: "GET",
+    },
+  },
+
+  PRODUCT_LINE_SERVICES: {
+    GET_ALL_PRODUCT_LINES: {
+      URL: "get-all-product-lines",
+      METHOD: "GET",
+    },
+  },
+
+  VOUCHER_SERVICES: {
+    GET_ALL_PRODUCT_LINES: {
+      URL: "get-all-vouchers",
+      METHOD: "GET",
+    },
+  },
+};
