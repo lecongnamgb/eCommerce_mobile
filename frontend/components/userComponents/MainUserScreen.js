@@ -35,18 +35,30 @@ export default function MainUserScreen() {
     <ScrollView>
             <HeaderUser/>
             <SeparateView/>
-            <UserOptionTag 
-                sourceIcon = {record}
-                title = {"Đơn mua"}
-                description = {"Xem lịch sử mua hàng"}
-            />
+            <TouchableOpacity
+                onPress = {() => {
+                    navigation.navigate("BillStatus")
+                }}
+            >
+                <UserOptionTag 
+                    sourceIcon = {record}
+                    title = {"Đơn mua"}
+                    description = {"Xem lịch sử mua hàng"}
+                />
+            </TouchableOpacity>
             <PurchaseStatus/>
             <SeparateView/>
-            <UserOptionTag 
-                sourceIcon = {bagIcon}
-                title = {"Mua lại"}
-                description = {"Xem thêm sản phẩm"}
-            />
+            <TouchableOpacity
+                onPress = {() => {
+                    navigation.navigate('BuyAgain')
+                }}
+            >
+                <UserOptionTag 
+                    sourceIcon = {bagIcon}
+                    title = {"Mua lại"}
+                    description = {"Xem thêm sản phẩm"}
+                />
+            </TouchableOpacity>
             <HorizontalProductList/>
             <SeparateView/>
             <UserOptionTag 
@@ -56,19 +68,27 @@ export default function MainUserScreen() {
                 description = {"Đăng ký miễn phí"}
             />
             <SeparateView/>
-            <UserOptionTag 
-                sourceIcon = {voucherIcon}
-                title = {"Voucher của tôi"}
-            />
-            <UserOptionTag 
-                sourceIcon = {heartIcon}
-                title = {"Đã thích"}
-                description = {"1 Like"}
-            />
-            <UserOptionTag 
-                sourceIcon = {clockIcon}
-                title = {"Đã xem gần đây"}
-            />
+            <TouchableOpacity
+                onPress = {() => {
+                    navigation.navigate("LikedProduct")
+                }}
+            >
+                <UserOptionTag 
+                    sourceIcon = {heartIcon}
+                    title = {"Đã thích"}
+                    description = {"1 Like"}
+                />
+            </TouchableOpacity>
+            <TouchableOpacity
+                onPress = {() => {
+                    navigation.navigate("RecentlyView")
+                }}
+            >
+                <UserOptionTag 
+                    sourceIcon = {clockIcon}
+                    title = {"Đã xem gần đây"}
+                />
+            </TouchableOpacity>
             <UserOptionTag 
                 sourceIcon = {starIcon}
                 title = {"Đánh giá của tôi"}
@@ -84,14 +104,6 @@ export default function MainUserScreen() {
                     title = {"Thiết lập tài khoản"}
                 />
             </TouchableOpacity>
-            <UserOptionTag 
-                sourceIcon = {questionMarkIcon}
-                title = {"Trung tâm trợ giúp"}
-            />
-            <UserOptionTag 
-                sourceIcon = {assistantIcon}
-                title = {"Trò chuyện với Shopee"}
-            />
                <View style = {{height: 50}}/>
         </ScrollView>
     </SafeAreaView>

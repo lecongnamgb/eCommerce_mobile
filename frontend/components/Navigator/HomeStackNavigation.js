@@ -2,7 +2,6 @@ import { View, Text } from 'react-native'
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import RecommendListItem from '../homeComponents/RecommendListItem'
-import BillStatus from '../userComponents/BillStatus'
 import SearchScreen from '../../screens/SearchScreen'
 import LogInScreen from '../../screens/LogInScreen'
 import CartScreen from '../../screens/CartScreen'
@@ -14,6 +13,10 @@ import NotiMain from '../notiComponents/NotiMain'
 import MainUserScreen from '../userComponents/MainUserScreen'
 import SignInScreen from '../../screens/SignInScreen'
 import EditInfoScreen from '../../screens/EditInfoScreen'
+import LikedProduct from '../../screens/LikedProduct'
+import RecentlyView from '../../screens/RecentlyView'
+import BuyAgain from '../../screens/BuyAgain'
+import BillStatus from '../../screens/BillStatus'
 
 const Stack = createStackNavigator();
 export default function HomeStackNavigation() {
@@ -38,9 +41,14 @@ export default function HomeStackNavigation() {
                 }
             }
         />
-        <Stack.Screen
-            name = {"Bill Status"}
-            component = {BillStatus}
+       <Stack.Screen
+            name = {"BillStatus"}
+            component= {BillStatus}
+            options = {
+                {
+                    headerShown: false,
+                }
+            }
         />
         <Stack.Screen
             name = {"Search"}
@@ -123,6 +131,33 @@ export default function HomeStackNavigation() {
         <Stack.Screen
             name = {"EditInfo"}
             component = {EditInfoScreen}
+            options= {
+                {
+                    headerShown: false
+                }
+            }
+        />
+        <Stack.Screen
+            name = {"LikedProduct"}
+            component = {LikedProduct}
+            options= {
+                {
+                    headerShown: false
+                }
+            }
+        />
+         <Stack.Screen
+            name = {"RecentlyView"}
+            component = {RecentlyView}
+            options= {
+                {
+                    headerShown: false
+                }
+            }
+        />
+         <Stack.Screen
+            name = {"BuyAgain"}
+            component = {BuyAgain}
             options= {
                 {
                     headerShown: false
