@@ -6,7 +6,6 @@ import {useState, useRef} from 'react'
 export default function HorizontalRecommendList() {
     const flatListRef = useRef(null);
 
-    
     const [listData, setListData] = useState([
         {
             id: 0,

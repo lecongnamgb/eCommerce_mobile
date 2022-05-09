@@ -19,7 +19,6 @@ export default function Product({ route }) {
     useEffect(() => {
         dispatch(getProductById(productId));
     }, []);
-    console.log(productId);
     const images = [
         {
             id: 1,

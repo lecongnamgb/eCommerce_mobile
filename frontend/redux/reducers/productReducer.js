@@ -1,7 +1,8 @@
 import GLOBAL_TYPES from "../../constants/actions";
 
 const initialState = {
-  data: [],
+  allProducts: [],
+  productById: {},
 };
 
 export default function productReducer(state = initialState, action) {

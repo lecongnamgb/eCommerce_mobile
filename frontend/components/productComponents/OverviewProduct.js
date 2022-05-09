@@ -6,9 +6,8 @@ import RatingStar from "./RatingStar";
 import basic_heart from "../../assets/icon/basic_heart.png";
 import blank_heart from "../../assets/icon/blank_heart.png";
 import { useState } from "react";
-
+import { formatMoney } from '../../helper/utils';
 export default function OverviewProduct(props) {
-  console.log(props);
   const [isLike, setIsLike] = useState(false);
   return (
     <View style={[styles.m_10, styles.bg_white]}>
@@ -28,7 +27,7 @@ export default function OverviewProduct(props) {
         ) : null}
       </View>
       <View style={[styles.mt_15, styles.mb_20]}>
-        <Text style={{ color: "red", fontSize: 20 }}>{props.priceEach}đ</Text>
+        <Text style={{ color: "red", fontSize: 20 }}>{formatMoney(props.priceEach)}đ</Text>
         <Text
           style={{
             color: "#4d4d4d",
@@ -37,7 +36,7 @@ export default function OverviewProduct(props) {
             paddingTop: 5,
           }}
         >
-          {props.priceEach}đ
+          {formatMoney(props.priceEach)}đ
         </Text>
       </View>
       <View style={styles.flex_row}>

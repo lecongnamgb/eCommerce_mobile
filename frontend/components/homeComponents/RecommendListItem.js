@@ -80,6 +80,7 @@ const listData = [
 ];
 
 export default function RecommendListItem({ navigation }) {
+  console.log(1);
   const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
   useEffect(() => {
