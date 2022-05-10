@@ -27,7 +27,7 @@ export default function RecommendToday() {
       >
         <Text style={styles.color_orange}>GỢI Ý HÔM NAY</Text>
       </View>
-      <HorizontalRecommendList />
+      <HorizontalRecommendList productlines={productlineList.data}/>
     </View>
   );
 }

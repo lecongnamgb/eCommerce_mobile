@@ -1,8 +1,12 @@
 import GLOBAL_TYPES from "../../constants/actions";
 
 const initialState = {
-  allProducts: [],
-  productById: {},
+  allProducts: {
+    data: []
+  },
+  productById: {
+    data: []
+  },
 };
 
 export default function productReducer(state = initialState, action) {
@@ -10,8 +14,13 @@ export default function productReducer(state = initialState, action) {
     case GLOBAL_TYPES.GET_PRODUCTS:
       return {
         ...state,
-        ...action.payload,
+        allProducts: action.payload
       };
+    case GLOBAL_TYPES.GET_PRODUCT_BY_ID: 
+      return {
+        ...state,
+        productById: action.payload
+      }
     default:
       return state;
   }

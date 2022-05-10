@@ -80,8 +80,7 @@ const listData = [
 ];
 
 export default function RecommendListItem({ navigation }) {
-  console.log(1);
-  const products = useSelector((state) => state.products);
+  const products = useSelector((state) => state.products.allProducts);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getProducts());
@@ -90,7 +89,7 @@ export default function RecommendListItem({ navigation }) {
     <SafeAreaView style={{ backgroundColor: "#fff" }}>
       <SearchForm width={"75%"} />
       <FlatList
-        data={products.data.data}
+        data={products.data}
         renderItem={({ item }) => (
           <RecommendItem recommendItem={item} containRating={false} />
         )}

@@ -41,7 +41,7 @@ export default function RecommendItem(props) {
           }}
         />
         <View style={{ position: "absolute", top: 0, right: 0 }}>
-          <PromoIcon rating={recommendItem.discount} />
+          <PromoIcon discount={recommendItem.discount} />
         </View>
         <View
           style={[
@@ -55,7 +55,7 @@ export default function RecommendItem(props) {
           <View style={[{ width: "100%", height: 50 }]}>
             <Text style={{ textAlign: "left" }} numberOfLines={2}>
               {" "}
-              {recommendItem.product_name}{" "}
+              {recommendItem.productName}{" "}
             </Text>
           </View>
           {props.containRating == true ? (
@@ -79,9 +79,7 @@ export default function RecommendItem(props) {
                     style={styles.img_12x12}
                   />
                 </View>
-                <Text style={{ fontSize: 12 }}>
-                  {" " + recommendItem.location}
-                </Text>
+                <Text style={{ fontSize: 12 }}>{" " + recommendItem.origin}</Text>
               </View>
             </View>
           ) : (

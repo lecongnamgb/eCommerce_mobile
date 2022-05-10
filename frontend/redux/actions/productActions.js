@@ -13,7 +13,7 @@ export const getProducts = () => async (dispatch) => {
 
   dispatch({
     type: GLOBAL_TYPES.GET_PRODUCTS,
-    payload: response.data,
+    payload: response.data.data,
   });
 };
 
@@ -28,7 +28,7 @@ export const getProductById = (id) => async (dispatch) => {
   });
 
   dispatch({
-    type: GLOBAL_TYPES.GET_PRODUCTS,
-    payload: response.data,
+    type: GLOBAL_TYPES.GET_PRODUCT_BY_ID,
+    payload: response.data.data,
   });
 };

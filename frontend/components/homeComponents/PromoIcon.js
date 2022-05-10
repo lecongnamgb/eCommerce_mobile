@@ -7,7 +7,7 @@ export default function PromoIcon({ discount }) {
     <View>
       <View style={[styles.promo_icon_body]}>
         <Text style={{ textAlign: "center", color: "red", fontSize: 12 }}>
-          {!discount ? 0 : discount}%
+          {discount ? discount : 0}%
         </Text>
         <Text style={{ textAlign: "center", color: "#fff", fontSize: 12 }}>
           GIẢM
