@@ -1,38 +1,59 @@
-import { View, Text, ScrollView } from 'react-native'
-import React from 'react'
+import { View, Text, ScrollView, TouchableOpacity } from 'react-native'
+import React, {useState} from 'react'
 import FilterItem from './FilterItem'
 
-export default function ListFilterItem() {
-    const listData = [
+export default function ListFilterItem(props) {
+    const [listData, setListData] = useState([
         {
             id: 0,
             title: "Chờ lấy hàng",
-            active: true,
+            active: props.activePage == "Chờ lấy hàng" ? true : false,
         },
         {
             id: 1,
             title: "Đang giao",
-            active: false,
+            active: props.activePage == "Đang giao" ? true : false,
         },
         {
             id: 2,
             title: "Đã giao",
-            active: false,
+            active: props.activePage == "Đã giao" ? true : false,
         },
         {
             id: 3,
             title: "Đã huỷ",
-            active: false,
+            active: props.activePage == "Đã huỷ" ? true : false,
         },
         
-    ]
+    ])
   return (
     <ScrollView
         horizontal
         showsHorizontalScrollIndicator= {false}
     >
         {
-            listData.map(item => <FilterItem title = {item.title} key = {item.id}/>)
+            listData.map((item, index) => 
+            <TouchableOpacity
+                key = {index}
+                activeOpacity = {1}
+                onPress = {() => {
+                    setListData(
+                        listData.map((subItem, subIndex) => {
+                            if (index === subIndex) {
+                                return {...subItem, active: true}
+                            } else {
+                                return {...subItem, active: false}
+                            }
+                        })
+                    )
+                }}
+            >
+                <FilterItem 
+                    title = {item.title} 
+                    active = {item.active}
+                    />
+            </TouchableOpacity>
+            )
         }
     </ScrollView>
   )

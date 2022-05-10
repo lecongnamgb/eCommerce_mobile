@@ -61,12 +61,18 @@ export default function MainUserScreen() {
             </TouchableOpacity>
             <HorizontalProductList/>
             <SeparateView/>
-            <UserOptionTag 
-                sourceIcon = {store}
-                highlight = {true}
-                title = {"Bắt đầu bán"}
-                description = {"Đăng ký miễn phí"}
-            />
+            <TouchableOpacity
+                onPress = {() => {
+                    navigation.navigate('RegisterSeller')
+                }}
+            >
+                <UserOptionTag 
+                    sourceIcon = {store}
+                    highlight = {true}
+                    title = {"Bắt đầu bán"}
+                    description = {"Đăng ký miễn phí"}
+                />
+            </TouchableOpacity>
             <SeparateView/>
             <TouchableOpacity
                 onPress = {() => {

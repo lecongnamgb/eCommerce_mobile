@@ -17,6 +17,7 @@ import LikedProduct from '../../screens/LikedProduct'
 import RecentlyView from '../../screens/RecentlyView'
 import BuyAgain from '../../screens/BuyAgain'
 import BillStatus from '../../screens/BillStatus'
+import RegisterSeller from '../../screens/RegisterSeller'
 
 const Stack = createStackNavigator();
 export default function HomeStackNavigation() {
@@ -158,6 +159,15 @@ export default function HomeStackNavigation() {
          <Stack.Screen
             name = {"BuyAgain"}
             component = {BuyAgain}
+            options= {
+                {
+                    headerShown: false
+                }
+            }
+        />
+        <Stack.Screen
+            name = {"RegisterSeller"}
+            component = {RegisterSeller}
             options= {
                 {
                     headerShown: false

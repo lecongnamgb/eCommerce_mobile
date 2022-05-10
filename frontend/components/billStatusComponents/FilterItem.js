@@ -5,11 +5,14 @@ import styles from '../styles'
 export default function FilterItem(props) {
   return (
     <View style = {[
-        styles.pt_10,
-        styles.pb_10,
-        styles.pl_20
+        styles.mt_10,
+        styles.mb_10,
+        {paddingLeft: 20, paddingRight: 21, height: 28},
+        props.active ?
+        {borderBottomColor: 'red', borderBottomWidth: 1} 
+        : null
     ]}>
-      <Text>{props.title}</Text>
+      <Text style = {props.active ? {color: 'red'} : null}>{props.title}</Text>
     </View>
   )
 }

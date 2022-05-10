@@ -1,10 +1,18 @@
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react';
 import styles from '../styles';
+import { useNavigation } from '@react-navigation/native';
 
 export default function StateItem(props) {
+    const navigation = useNavigation();
   return (
-    <View style = {[styles.alignCenterItem, styles.pr_5,  styles.pl_5, styles.mb_10, styles.width_25]}>
+    <TouchableOpacity 
+    style = {[styles.alignCenterItem, styles.pr_5,  styles.pl_5, styles.mb_10, styles.width_25]}
+    activeOpacity = {1}
+    onPress = {() => {
+        navigation.navigate('BillStatus', {title: props.title})
+    }}
+    >
         <View style = {[styles.pb_15, styles.pt_15]}>
             <Image 
                 source = {props.sourceIcon}
@@ -18,6 +26,6 @@ export default function StateItem(props) {
             }
         </View>
         <Text style = {{fontSize: 12}}>{props.title}</Text>
-    </View>
+    </TouchableOpacity>
   )
 }
