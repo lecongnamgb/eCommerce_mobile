@@ -7,11 +7,22 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 
 import { getProductLines } from "../../redux/actions/productlineActions";
+import { refreshToken } from "../../redux/actions/userActions";
 export default function RecommendToday() {
   const productlineList = useSelector((state) => state.productlines);
+  const error = useSelector((state) => state.error);
+  // console.log(error);
+  const user = useSelector((state) => state.user);
+  console.log(user);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getProductLines());
+    dispatch(
+      refreshToken({
+        refreshToken:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6InVzZXIiLCJ0b2tlblR5cGUiOiJSRUZSRVNIX1RPS0VOIiwiaWF0IjoxNjUyMjc3MjU1LCJleHAiOjE2NTQ4NjkyNTV9.trgsCJlBbGMOZOS_KN0ONVHVBfNZkKSEokF1CSBqQPI",
+      })
+    );
   }, []);
 
   return (
@@ -27,7 +38,7 @@ export default function RecommendToday() {
       >
         <Text style={styles.color_orange}>GỢI Ý HÔM NAY</Text>
       </View>
-      <HorizontalRecommendList productlines={productlineList.data}/>
+      <HorizontalRecommendList productlines={productlineList.data} />
     </View>
   );
 }
