@@ -51,6 +51,8 @@ export default function ListFilterItem(props) {
                 <FilterItem 
                     title = {item.title} 
                     active = {item.active}
+                    pl = {20}
+                    pr = {21}
                     />
             </TouchableOpacity>
             )

@@ -258,7 +258,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#e0e0e0'
     },
     rounded: {
-        borderRadius: 40,
+        borderRadius: 1000,
     },
     numberOfPurchases: {
         fontSize: 10,

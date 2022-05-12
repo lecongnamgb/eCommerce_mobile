@@ -7,7 +7,7 @@ export default function FilterItem(props) {
     <View style = {[
         styles.mt_10,
         styles.mb_10,
-        {paddingLeft: 20, paddingRight: 21, height: 28},
+        {paddingLeft: props.pl, paddingRight: props.pr, height: 28},
         props.active ?
         {borderBottomColor: 'red', borderBottomWidth: 1} 
         : null

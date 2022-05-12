@@ -18,6 +18,7 @@ import RecentlyView from '../../screens/RecentlyView'
 import BuyAgain from '../../screens/BuyAgain'
 import BillStatus from '../../screens/BillStatus'
 import RegisterSeller from '../../screens/RegisterSeller'
+import ShopScreen from '../../screens/ShopScreen'
 
 const Stack = createStackNavigator();
 export default function HomeStackNavigation() {
@@ -168,6 +169,15 @@ export default function HomeStackNavigation() {
         <Stack.Screen
             name = {"RegisterSeller"}
             component = {RegisterSeller}
+            options= {
+                {
+                    headerShown: false
+                }
+            }
+        />
+         <Stack.Screen
+            name = {"Shop"}
+            component = {ShopScreen}
             options= {
                 {
                     headerShown: false

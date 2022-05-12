@@ -1,8 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, 
-    Dimensions,
-    Text,
-    TouchableOpacity,
+import { TouchableOpacity,
     ScrollView, 
     View, 
     SafeAreaView} from 'react-native';
@@ -17,10 +13,7 @@ import SeparateView from './SeparateView';
 import heartIcon from '../../assets/icon/heart.png';
 import clockIcon from '../../assets/icon/clock.png';
 import starIcon from '../../assets/icon/star.png';
-import voucherIcon from '../../assets/icon/voucher.png';
 import profileIcon from '../../assets/icon/profile.png';
-import assistantIcon from '../../assets/icon/assistant.png';
-import questionMarkIcon from '../../assets/icon/question.png';
 import { useNavigation } from '@react-navigation/native';
 import BottomNavigator from '../Navigator/BottomNavigator';
 
@@ -71,6 +64,17 @@ export default function MainUserScreen() {
                     highlight = {true}
                     title = {"Bắt đầu bán"}
                     description = {"Đăng ký miễn phí"}
+                />
+            </TouchableOpacity>
+            <TouchableOpacity
+                onPress = {() => {
+                    navigation.navigate('RegisterSeller')
+                }}
+            >
+                <UserOptionTag 
+                    sourceIcon = {store}
+                    highlight = {true}
+                    title = {"Cửa hàng của bạn"}
                 />
             </TouchableOpacity>
             <SeparateView/>

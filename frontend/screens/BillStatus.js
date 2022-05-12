@@ -1,5 +1,5 @@
 import { View, Text, SafeAreaView, FlatList } from 'react-native'
-import React from 'react'
+import React, {useState} from 'react'
 import Header from '../components/notiComponents/Header'
 import ListFilterItem from '../components/billStatusComponents/ListFilterItem'
 import RecommendItem from '../components/homeComponents/RecommendItem'
@@ -77,6 +77,9 @@ export default function BillStatus({route}) {
             quantitySold: 1700
         }
     ]
+    const [category, setCategory] = useState([
+        
+    ])
   return (
     <SafeAreaView style = {{height: '100%', backgroundColor: '#fff'}}>
         <Header
