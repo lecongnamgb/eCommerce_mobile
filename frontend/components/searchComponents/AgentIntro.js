@@ -41,9 +41,12 @@ export default function AgentIntro(props) {
                 </View>
         </TouchableOpacity>
         {props.seeMore? 
-        <View style = {[styles.alignCenterItemVertically, {width: '20%', paddingLeft: 16}]}>
+        <TouchableOpacity 
+            style = {[styles.alignCenterItemVertically, {width: '20%', paddingLeft: 16}]}
+            onPress = {props.handleSeeMore}
+        >
             <Text style = {[{fontSize: 16, textAlign: 'center'}, styles.filterBar_text_active]}>Thêm kết quả</Text>
-        </View>
+        </TouchableOpacity>
         : 
         <View  style = {[styles.alignCenterItemVertically, {width: '25%'}]}>
             <TouchableOpacity 

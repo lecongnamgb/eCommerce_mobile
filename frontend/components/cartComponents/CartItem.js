@@ -1,12 +1,10 @@
 import { View, Text, Image, Button, TouchableOpacity } from 'react-native'
 import React from 'react'
 import styles from '../styles'
-import { useState } from 'react'
 import SeparateView from '../userComponents/SeparateView'
 import UserOptionTag from '../userComponents/UserOptionTag'
 
 export default function CartItem(props) {
-    const [quantity, setQuantity] = useState(1)
   return (
       <View>
           <SeparateView/>
@@ -29,16 +27,12 @@ export default function CartItem(props) {
                     {props.description}
                 </Text>
                 <Text style = {{fontWeight: 'bold', color: 'red', fontSize: 16, marginTop: 10}}>
-                    {props.price}đ
+                    {props.price * props.quantity}đ
                 </Text>
                 <View style = {[styles.flex_row, {marginTop: 10}]}>
                     <TouchableOpacity
                     activeOpacity={1}
-                    onPress={() => {
-                        if (quantity > 1) {
-                        setQuantity(quantity - 1)
-                        }
-                    }}
+                    onPress={props.handleClickMinus}
                     style = {[{borderColor: '#ccc', borderWidth: 1, borderRightWidth: 0, width: 30, height: 35, borderTopLeftRadius: 15, borderBottomLeftRadius: 15}, styles.alignCenterItem, styles.alignCenterItemVertically]}
                     >
                        <Image
@@ -47,13 +41,11 @@ export default function CartItem(props) {
                        />
                     </TouchableOpacity>
                     <View style = {{justifyContent: 'center', borderColor: '#ccc',borderTopWidth: 1, borderBottomWidth: 1}}>
-                        <Text>{quantity}</Text>
+                        <Text>{props.quantity}</Text>
                     </View>
                     <TouchableOpacity
                     activeOpacity={1}
-                    onPress={() => {
-                        setQuantity(quantity + 1)
-                    }}
+                    onPress={props.handleClickPlus}
                     style = {[{borderColor: '#ccc', borderWidth: 1, borderTopRightRadius: 15, borderBottomRightRadius: 15, borderLeftWidth: 0, width: 30, height: 35}, styles.alignCenterItem, styles.alignCenterItemVertically]}
                     >
                        <Image

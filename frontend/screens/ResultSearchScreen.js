@@ -9,6 +9,7 @@ import RecommendItem from '../components/homeComponents/RecommendItem'
 import CategoryItem from '../components/homeComponents/CategoryItem'
 
 export default function ResultSearchScreen({route}) {
+    const navigation = useNavigation();
     const listData = [
         {
             id: 101,
@@ -115,7 +116,9 @@ export default function ResultSearchScreen({route}) {
                 numColumns={2}
                 scrollEnabled={true}
                 keyExtractor ={item => item.id}
-                ListHeaderComponent= {<AgentIntro seeMore = {true}/>}
+                ListHeaderComponent= {<AgentIntro seeMore = {true} handleSeeMore = {() => {
+                    navigation.navigate('resultShop', {text: route.params.text})
+                }}/>}
                 ListFooterComponent = {<View style = {{height: 100}}></View>}
         />
     </SafeAreaView>

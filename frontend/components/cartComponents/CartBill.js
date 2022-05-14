@@ -3,7 +3,7 @@ import React from 'react'
 import UserOptionTag from '../userComponents/UserOptionTag'
 import styles from '../styles'
 
-export default function () {
+export default function (props) {
   return (
         <View style = {{flex: 1, bottom:100, backgroundColor: '#fff'}}>
             <ScrollView></ScrollView>
@@ -20,7 +20,7 @@ export default function () {
                         <Text>
                             Tổng thanh toán: {" "}
                             <Text style = {{fontWeight: 'bold', color: 'red'}}>
-                                500.000đ
+                                {props.totalValue}đ
                             </Text>
                         </Text>
                     </View>

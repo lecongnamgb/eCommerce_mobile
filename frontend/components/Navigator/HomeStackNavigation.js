@@ -19,6 +19,7 @@ import BuyAgain from '../../screens/BuyAgain'
 import BillStatus from '../../screens/BillStatus'
 import RegisterSeller from '../../screens/RegisterSeller'
 import ShopScreen from '../../screens/ShopScreen'
+import ResultShop from '../../screens/ResultShop'
 
 const Stack = createStackNavigator();
 export default function HomeStackNavigation() {
@@ -178,6 +179,15 @@ export default function HomeStackNavigation() {
          <Stack.Screen
             name = {"Shop"}
             component = {ShopScreen}
+            options= {
+                {
+                    headerShown: false
+                }
+            }
+        />
+        <Stack.Screen
+            name = {"resultShop"}
+            component = {ResultShop}
             options= {
                 {
                     headerShown: false

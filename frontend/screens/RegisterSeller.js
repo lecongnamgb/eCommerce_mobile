@@ -9,8 +9,8 @@ import styles from '../components/styles'
 export default function RegisterSeller() {
     const [shopName, setShopName] = useState('')
     const [address, setAddress] = useState('')
-    const [phoneNumber, setPhoneNumber] = useState('')
     const [linkImage, setLinkImage] = useState('');
+    const [linkBgImage, setLinkBgImage] = useState('')
   return (
     <SafeAreaView style = {{height: '100%', backgroundColor: '#fff'}}>
       <Header
@@ -27,12 +27,20 @@ export default function RegisterSeller() {
             focus = {true}
             />
       </View>
+      <View style = {styles.hr_bottom}>
         <FieldWithUpperLabel
-                plhdTitle = {"Link ảnh"}
-                label = {"Ảnh đại diện của shop"}
+                plhdTitle = {"Link ảnh logo"}
+                label = {"Ảnh Logo của shop"}
                 value = {linkImage}
                 onChangeText = {link => setLinkImage(link)}
             />
+      </View>
+        <FieldWithUpperLabel
+            plhdTitle = {"Link ảnh bìa"}
+            label = {"Ảnh bìa của shop"}
+            value = {linkBgImage}
+            onChangeText = {link => setLinkBgImage(link)}
+        />
         <SeparateView/>
         <View style = {styles.hr_bottom}>
             <FieldWithUpperLabel
@@ -40,14 +48,6 @@ export default function RegisterSeller() {
                 label = {"Địa chỉ lấy hàng"}
                 value = {address}
                 onChangeText = {text => setAddress(text)}
-            />
-        </View>
-        <View style = {styles.hr_bottom}>
-            <FieldWithUpperLabel
-                plhdTitle = {"Link ảnh"}
-                label = {"Ảnh đại diện của shop"}
-                value = {linkImage}
-                onChangeText = {link => setLinkImage(link)}
             />
         </View>
         <TouchableOpacity 

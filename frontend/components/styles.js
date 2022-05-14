@@ -341,6 +341,10 @@ const styles = StyleSheet.create({
     img_124x124: {
         width: 124,
         height: 124
+    },
+    img_40x40: {
+        width: 40,
+        height: 40
     }
   });
 
