@@ -20,6 +20,10 @@ import BillStatus from '../../screens/BillStatus'
 import RegisterSeller from '../../screens/RegisterSeller'
 import ShopScreen from '../../screens/ShopScreen'
 import ResultShop from '../../screens/ResultShop'
+import EditName from '../../screens/EditScreen/EditName'
+import EditPhoneNumber from '../../screens/EditScreen/EditPhoneNumber'
+import EditAddress from '../../screens/EditScreen/EditAddress'
+import EditPassword from '../../screens/EditScreen/EditPassword'
 
 const Stack = createStackNavigator();
 export default function HomeStackNavigation() {
@@ -188,6 +192,42 @@ export default function HomeStackNavigation() {
         <Stack.Screen
             name = {"resultShop"}
             component = {ResultShop}
+            options= {
+                {
+                    headerShown: false
+                }
+            }
+        />
+        <Stack.Screen
+            name = {"EditName"}
+            component = {EditName}
+            options= {
+                {
+                    headerShown: false
+                }
+            }
+        />
+         <Stack.Screen
+            name = {"EditPhoneNumber"}
+            component = {EditPhoneNumber}
+            options= {
+                {
+                    headerShown: false
+                }
+            }
+        />
+         <Stack.Screen
+            name = {"EditAddress"}
+            component = {EditAddress}
+            options= {
+                {
+                    headerShown: false
+                }
+            }
+        />
+        <Stack.Screen
+            name = {"EditPassword"}
+            component = {EditPassword}
             options= {
                 {
                     headerShown: false

@@ -8,7 +8,14 @@ import { useNavigation } from '@react-navigation/native'
 
 export default function EditInfoScreen() {
     const navigation = useNavigation();
-    const urlImage = "https://picsum.photos/200";
+    const userInfo = {
+        name: 'Lê Công Nam',
+        username: 'lecongnam',
+        gender: 'Nam',
+        dateOfBirth: '01-02-2001',
+        phoneNumber: '0335927773',
+        address: null,
+    }
   return (
     <SafeAreaView style = {[{backgroundColor: '#fff', height: '100%'}]}>
         <Header 
@@ -21,41 +28,63 @@ export default function EditInfoScreen() {
                 style = {styles.img_64x64}
             />
         </View>
-        <UserOptionTag 
-            title = {"Tên"} 
-            description = {"Lê Công Nam"} 
-            containIcon = {false}
-        />
+        <TouchableOpacity
+            onPress={() => {
+                navigation.navigate('EditName', {name: userInfo.name});
+
+            }}
+        >
+            <UserOptionTag 
+                title = {"Tên"} 
+                description = {userInfo.name == null ? null : userInfo.name} 
+                containIcon = {false}
+            />
+        </TouchableOpacity>
         <UserOptionTag 
             title = {"Tên đăng nhập"} 
-            description = {"lecongnam2001"}
+            description = {userInfo.username}
             containIcon = {false}
             containRightArrow = {false}
         />
         <SeparateView/>
         <UserOptionTag 
             title = {"Giới tính"} 
-            description = {"Nam"}
+            description = {userInfo.gender == null ? null : userInfo.gender}
             containIcon = {false}
         />
          <UserOptionTag 
             title = {"Ngày sinh"} 
-            description = {null}
+            description = {userInfo.dateOfBirth == null ? null : userInfo.dateOfBirth}
             containIcon = {false}
         />
-        <UserOptionTag 
-            title = {"Số điện thoại"} 
-            description = {null}
-            containIcon = {false}
-        />
-        <UserOptionTag 
-            title = {"Địa chỉ"} 
-            description = {null}
-            containIcon = {false}
-        />
+        <TouchableOpacity
+            onPress = {() => {
+                navigation.navigate('EditPhoneNumber', {phoneNumber: userInfo.phoneNumber})
+            }}
+        >
+            <UserOptionTag 
+                title = {"Số điện thoại"} 
+                description = {userInfo.phoneNumber == null ? null : userInfo.phoneNumber}
+                containIcon = {false}
+            />
+        </TouchableOpacity>
+        <TouchableOpacity
+            onPress = {() => {
+                navigation.navigate('EditAddress', {address: userInfo.address})
+            }}
+        >
+            <UserOptionTag 
+                title = {"Địa chỉ"} 
+                description = {userInfo.address == null ? null : userInfo.address}
+                containIcon = {false}
+            />
+        </TouchableOpacity>
         <SeparateView/>
         <TouchableOpacity
             style = {styles.hr_bottom}
+            onPress = {() => {
+                navigation.navigate('EditPassword')
+            }}
         >
             <UserOptionTag 
                 title = {"Thay đổi mật khẩu"} 
