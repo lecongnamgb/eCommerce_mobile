@@ -6,10 +6,12 @@ import NormalField from '../../components/checkInComponents/NormalField'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import styles from '../../components/styles'
 import { useNavigation } from '@react-navigation/native'
+import RNDateTimePicker from '@react-native-community/datetimepicker'
 
 export default function EditPhoneNumber({route}) {
     const navigation = useNavigation();
     const [phoneNumber, setPhoneNumber] = useState(route.params?.phoneNumber)
+    const [date, setDate] = useState('2016-05-15')
   return (
     <SafeAreaView style = {{height: '100%', backgroundColor: '#fff'}}>
       <Header

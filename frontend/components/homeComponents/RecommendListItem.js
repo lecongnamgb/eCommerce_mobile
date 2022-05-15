@@ -79,9 +79,6 @@ const listData = [
 ]
 
 export default function RecommendListItem({navigation}) {
-   var handleOnEndReached = () => {
-        console.log('123');
-    }
   return (
       <SafeAreaView style = {{backgroundColor: '#fff'}}>
           <SearchForm width = {"85%"}/>
@@ -97,7 +94,6 @@ export default function RecommendListItem({navigation}) {
                 scrollEnabled={true}
                 ListHeaderComponent={RecommendToday}
                 ListFooterComponent = {<View style = {{height: 110}}/>}
-                onEndReached = {handleOnEndReached}
         />
    </SafeAreaView>
   )

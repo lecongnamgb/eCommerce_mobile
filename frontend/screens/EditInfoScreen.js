@@ -5,17 +5,26 @@ import styles from '../components/styles'
 import UserOptionTag from '../components/userComponents/UserOptionTag'
 import SeparateView from '../components/userComponents/SeparateView'
 import { useNavigation } from '@react-navigation/native'
+import RNDateTimePicker from '@react-native-community/datetimepicker'
+import { useState } from 'react'
+import { Picker } from '@react-native-picker/picker'
 
 export default function EditInfoScreen() {
-    const navigation = useNavigation();
     const userInfo = {
         name: 'Lê Công Nam',
         username: 'lecongnam',
         gender: 'Nam',
-        dateOfBirth: '01-02-2001',
+        dateOfBirth: '01/02/2001',
         phoneNumber: '0335927773',
         address: null,
     }
+    const navigation = useNavigation();
+    const [openDob, setOpenDob] = useState(false)
+    const [selectedGender, setSelectedGender] = useState();
+    const [date, setDate] = useState(new Date());
+    const [openGender, setOpenGender] = useState(false);
+    const [dob, setDob] = useState(userInfo.dateOfBirth ? userInfo.dateOfBirth : null);
+    const [gender, setGender] = useState(userInfo.gender ? userInfo.gender : null);
   return (
     <SafeAreaView style = {[{backgroundColor: '#fff', height: '100%'}]}>
         <Header 
@@ -47,16 +56,32 @@ export default function EditInfoScreen() {
             containRightArrow = {false}
         />
         <SeparateView/>
-        <UserOptionTag 
-            title = {"Giới tính"} 
-            description = {userInfo.gender == null ? null : userInfo.gender}
-            containIcon = {false}
-        />
-         <UserOptionTag 
-            title = {"Ngày sinh"} 
-            description = {userInfo.dateOfBirth == null ? null : userInfo.dateOfBirth}
-            containIcon = {false}
-        />
+        <TouchableOpacity
+            activeOpacity={1}
+            onPress = {() => {
+                setOpenDob(false);
+                setOpenGender(true)
+            }}
+        >     
+            <UserOptionTag 
+                title = {"Giới tính"} 
+                description = {gender}
+                containIcon = {false}
+            />
+        </TouchableOpacity>
+        <TouchableOpacity
+            onPress = {() => {
+                setOpenGender(false)
+                setOpenDob(true);
+            }}
+            activeOpacity = {1}
+        >
+            <UserOptionTag 
+                title = {"Ngày sinh"} 
+                description = {dob}
+                containIcon = {false}
+            />
+        </TouchableOpacity>
         <TouchableOpacity
             onPress = {() => {
                 navigation.navigate('EditPhoneNumber', {phoneNumber: userInfo.phoneNumber})
@@ -103,6 +128,55 @@ export default function EditInfoScreen() {
                 <Text style = {{fontSize: 16, color: '#fff'}}>Đăng xuất</Text>
             </View>
         </TouchableOpacity>
+        {
+            openDob ? 
+        <View style = {{borderTopColor: '#ccc', borderTopWidth: 1, paddingTop: 10}}>
+            <TouchableOpacity
+                onPress = {() => {
+                    setOpenDob(false);
+                    setDob(date.toLocaleDateString("vi-VN"))
+                }}
+                style = {{alignItems: 'flex-end'}}
+            >
+                <Text style = {{fontSize: 16, fontWeight: 'bold', color: '#3399ff', paddingRight: 10}}>Done</Text>
+            </TouchableOpacity>
+            <RNDateTimePicker 
+                mode="date" 
+                value = {date}
+                dateFormat = {'day month year'}
+                onChange = {(event, date) => {
+                    setDate(date)
+                }}
+                display = {'spinner'}
+            />
+        </View>
+        : null
+        }
+        {
+            openGender ? 
+            <View style = {{borderTopColor: '#ccc', borderTopWidth: 1, paddingTop: 10}}>
+            <TouchableOpacity
+                onPress = {() => {
+                    setOpenGender(false)
+                    setGender(selectedGender)
+                }}
+                style = {{alignItems: 'flex-end'}}
+            >
+                <Text style = {{fontSize: 16, fontWeight: 'bold', color: '#3399ff', paddingRight: 10}}>Done</Text>
+            </TouchableOpacity>
+            <Picker
+                selectedValue={selectedGender}
+                onValueChange = {(itemValue, itemIndex) => {
+                    setSelectedGender(itemValue)
+                }}
+            >
+                <Picker.Item label = "Nam" value = {"Nam"}/>
+                <Picker.Item label = "Nữ" value = {"Nữ"}/>
+                <Picker.Item label = "Khác" value = {"Khác"}/>
+            </Picker>
+        </View>
+        : null
+        }
     </SafeAreaView>
   )
 }
