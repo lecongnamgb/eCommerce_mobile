@@ -24,6 +24,9 @@ import EditName from '../../screens/EditScreen/EditName'
 import EditPhoneNumber from '../../screens/EditScreen/EditPhoneNumber'
 import EditAddress from '../../screens/EditScreen/EditAddress'
 import EditPassword from '../../screens/EditScreen/EditPassword'
+import ProductReview from '../../screens/ProductReview'
+import ProductManager from '../../screens/ProductManager'
+import EditProductInfo from '../../screens/EditProductInfo'
 
 const Stack = createStackNavigator();
 export default function HomeStackNavigation() {
@@ -228,6 +231,33 @@ export default function HomeStackNavigation() {
         <Stack.Screen
             name = {"EditPassword"}
             component = {EditPassword}
+            options= {
+                {
+                    headerShown: false
+                }
+            }
+        />
+         <Stack.Screen
+            name = {"Review"}
+            component = {ProductReview}
+            options= {
+                {
+                    headerShown: false
+                }
+            }
+        />
+         <Stack.Screen
+            name = {"ProductManager"}
+            component = {ProductManager}
+            options= {
+                {
+                    headerShown: false
+                }
+            }
+        />
+         <Stack.Screen
+            name = {"EditProductInfo"}
+            component = {EditProductInfo}
             options= {
                 {
                     headerShown: false

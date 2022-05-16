@@ -1,84 +1,55 @@
-import { View, Text, SafeAreaView, FlatList } from 'react-native'
+import { View, Text, SafeAreaView, ScrollView } from 'react-native'
 import React, {useState} from 'react'
 import Header from '../components/notiComponents/Header'
 import ListFilterItem from '../components/billStatusComponents/ListFilterItem'
 import RecommendItem from '../components/homeComponents/RecommendItem'
+import ItemStatus from '../components/billStatusComponents/ItemStatus'
+import SeparateView from '../components/userComponents/SeparateView'
+import { useNavigation } from '@react-navigation/native'
 
 export default function BillStatus({route}) {
-    const listData = [
+    const navigation = useNavigation();
+    const [listData, setListData] = useState([
         {
-            id: 1,
-            sourceIcon: require('../assets/icon/ao123.png'),
-            title: "Áo thun chất liệu siêu cấp vip pro, mặc co giãn thoải mái thôi rồi",
-            price: 1000,
-            quantitySold: 1700
+            id: 0,  
+            shopName: 'shop1',
+            uriImg: 'https://top10tphcm.com/wp-content/uploads/2019/08/ao-thun-tay-lo-co-gai-sexy.png',
+            productName: 'Áo thun chất lượng vjppro 123 123 123 123 123',
+            priceEach: 325000,
+            quantity: 1,
         },
         {
-            id: 2,
-            sourceIcon: require('../assets/icon/ao123.png'),
-            title: "Áo thun chất liệu siêu cấp vip pro, mặc co giãn thoải mái thôi rồi",
-            price: 1000,
-            quantitySold: 1700
+            id: 1,  
+            shopName: 'shop1',
+            uriImg: 'https://top10tphcm.com/wp-content/uploads/2019/08/ao-thun-tay-lo-co-gai-sexy.png',
+            productName: 'Áo thun chất lượng vjppro 123 123 123 123 123 ',
+            priceEach: 325000,
+            quantity: 1,
         },
         {
-            id: 3,
-            sourceIcon: require('../assets/icon/ao123.png'),
-            title: "Áo thun chất liệu siêu cấp vip pro, mặc co giãn thoải mái thôi rồi",
-            price: 1000,
-            quantitySold: 170
+            id: 2,  
+            shopName: 'shop1',
+            uriImg: 'https://top10tphcm.com/wp-content/uploads/2019/08/ao-thun-tay-lo-co-gai-sexy.png',
+            productName: 'Áo thun chất lượng vjppro 123 123 123 123 123 ',
+            priceEach: 325000,
+            quantity: 1,
         },
         {
-            id: 4,
-            sourceIcon: require('../assets/icon/ao123.png'),
-            title: "Áo thun chất liệu siêu cấp vip pro, mặc co giãn thoải mái thôi rồi",
-            price: 1000,
-            quantitySold: 1700
+            id: 3,  
+            shopName: 'shop1',
+            uriImg: 'https://top10tphcm.com/wp-content/uploads/2019/08/ao-thun-tay-lo-co-gai-sexy.png',
+            productName: 'Áo thun chất lượng vjppro 123 123 123 123 123 ',
+            priceEach: 325000,
+            quantity: 1,
         },
         {
-            id: 5,
-            sourceIcon: require('../assets/icon/ao123.png'),
-            title: "Áo thun chất liệu siêu cấp vip pro, mặc co giãn thoải mái thôi rồi",
-            price: 1000,
-            quantitySold: 1700
+            id: 4,  
+            shopName: 'shop1',
+            uriImg: 'https://top10tphcm.com/wp-content/uploads/2019/08/ao-thun-tay-lo-co-gai-sexy.png',
+            productName: 'Áo thun chất lượng vjppro 123 123 123 123 123 ',
+            priceEach: 325000,
+            quantity: 1,
         },
-        {
-            id: 6,
-            sourceIcon: require('../assets/icon/ao123.png'),
-            title: "Áo thun chất liệu siêu cấp vip pro, mặc co giãn thoải mái thôi rồi",
-            price: 1000,
-            quantitySold: 1700
-        },
-        {
-            id: 7,
-            sourceIcon: require('../assets/icon/ao123.png'),
-            title: "Áo thun chất liệu siêu cấp vip pro, mặc co giãn thoải mái thôi rồi",
-            price: 1000,
-            quantitySold: 1700
-        },
-        {
-            id: 8,
-            sourceIcon: require('../assets/icon/ao123.png'),
-            title: "Áo thun chất liệu siêu cấp vip pro, mặc co giãn thoải mái thôi rồi",
-            price: 1000,
-            quantitySold: 1700
-        },
-        {
-            id: 9,
-            sourceIcon: require('../assets/icon/ao123.png'),
-            title: "Áo thun chất liệu siêu cấp vip pro, mặc co giãn thoải mái thôi rồi",
-            price: 1000,
-            quantitySold: 1700
-        },
-        {
-            id: 10,
-            sourceIcon: require('../assets/icon/ao123.png'),
-            title: "Áo thun chất liệu siêu cấp vip pro, mặc co giãn thoải mái thôi rồi",
-            price: 1000,
-            quantitySold: 1700
-        }
-    ]
-    const [category, setCategory] = useState([
-        
     ])
   return (
     <SafeAreaView style = {{height: '100%', backgroundColor: '#fff'}}>
@@ -89,12 +60,24 @@ export default function BillStatus({route}) {
         <ListFilterItem
             activePage = {route.params == undefined ? "Chờ lấy hàng" : route.params.title}
         />
-           <FlatList
-            data = {listData}
-            renderItem = {({item}) => <RecommendItem recommendItem = {item} containRating = {false}/>}
-            keyExtractor = {item => item.id}
-            numColumns = {2}
-        />
+        <ScrollView>
+            <SeparateView/>
+            {
+                listData.map(item => 
+                    <ItemStatus
+                        key = {item.id}
+                        shopName = {item.shopName}
+                        uriImg = {item.uriImg}
+                        productName = {item.productName}
+                        quantity = {item.quantity}
+                        priceEach = {item.priceEach}
+                        handlePress = {() => {
+                            navigation.navigate("Review")
+                        }}
+                    />
+                )
+            }
+        </ScrollView>
     </SafeAreaView>
   )
 }

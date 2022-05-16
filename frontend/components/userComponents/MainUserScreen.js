@@ -19,6 +19,9 @@ import BottomNavigator from '../Navigator/BottomNavigator';
 
 export default function MainUserScreen() {
     const navigation = useNavigation();
+    const userInfo = {
+        isSeller: true
+    }
   return (
     <SafeAreaView style = {{height: '100%'}}>
         <BottomNavigator 
@@ -54,29 +57,56 @@ export default function MainUserScreen() {
             </TouchableOpacity>
             <HorizontalProductList/>
             <SeparateView/>
-            <TouchableOpacity
-                onPress = {() => {
-                    navigation.navigate('RegisterSeller')
-                }}
-            >
-                <UserOptionTag 
-                    sourceIcon = {store}
-                    highlight = {true}
-                    title = {"Bắt đầu bán"}
-                    description = {"Đăng ký miễn phí"}
-                />
-            </TouchableOpacity>
-            <TouchableOpacity
-                onPress = {() => {
-                    navigation.navigate('RegisterSeller')
-                }}
-            >
-                <UserOptionTag 
-                    sourceIcon = {store}
-                    highlight = {true}
-                    title = {"Cửa hàng của bạn"}
-                />
-            </TouchableOpacity>
+            {userInfo.isSeller ?
+            <View>
+                    <TouchableOpacity
+                        onPress = {() => {
+                            navigation.navigate('Shop')
+                        }}
+                    >
+                    <UserOptionTag 
+                        sourceIcon = {store}
+                        highlight = {true}
+                        title = {"Cửa hàng của bạn"}
+                    />
+                </TouchableOpacity>
+                <TouchableOpacity
+                        onPress = {() => {
+                            navigation.navigate('ProductManager')
+                        }}
+                    >
+                    <UserOptionTag 
+                        sourceIcon = {require('../../assets/icon/manage.png')}
+                        highlight = {true}
+                        title = {"Quản lý sản phẩm"}
+                    />
+                </TouchableOpacity>
+                <TouchableOpacity
+                        onPress = {() => {
+                            navigation.navigate('RegisterSeller')
+                        }}
+                    >
+                    <UserOptionTag 
+                        sourceIcon = {require('../../assets/icon/orderManagement.png')}
+                        highlight = {true}
+                        title = {"Quản lý đơn hàng"}
+                    />
+                </TouchableOpacity>
+            </View>
+                :
+                <TouchableOpacity
+                    onPress = {() => {
+                        navigation.navigate('RegisterSeller')
+                    }}
+                >
+                    <UserOptionTag 
+                        sourceIcon = {store}
+                        highlight = {true}
+                        title = {"Bắt đầu bán"}
+                        description = {"Đăng ký miễn phí"}
+                    />
+                </TouchableOpacity>
+            }
             <SeparateView/>
             <TouchableOpacity
                 onPress = {() => {

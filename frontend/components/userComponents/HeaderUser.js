@@ -25,7 +25,7 @@ export default function HeaderUser() {
             <View style = {styles.ml_10}>
                 <Text style = {[styles.userName, styles.bold]}>Lê Công Nam</Text>
                 <Text style = {styles.bottom}>
-                    Người theo dõi <Text style = {styles.bold}>0 </Text>Đang theo dõi <Text style = {styles.bold}>0</Text>
+                    <Text>Đang theo dõi <Text style = {styles.bold}>0</Text></Text>
                 </Text>
             </View>
         </View>
