@@ -1,6 +1,7 @@
 import { View, Text, FlatList, SafeAreaView, ScrollView } from 'react-native'
 import React, { useState } from 'react'
 import CartItem from './CartItem'
+import { useNavigation } from '@react-navigation/native'
 import Header from '../notiComponents/Header'
 import CartBill from './CartBill'
 
@@ -13,6 +14,7 @@ function calculateSum(orders) {
 }
 
 export default function Cart() {
+    const navigation = useNavigation();
     const [orders, setOrders] = useState([
         {
             id: 1,
@@ -126,10 +128,15 @@ export default function Cart() {
                 keyExtractor = {item => item.id}
                 ListHeaderComponent = {<Header title = "Giỏ hàng" canBack = {true}/>}
                 stickyHeaderIndices = {[0]}
-                ListFooterComponent = {<View style = {{height: 100}}></View>}
+                ListFooterComponent = {<View style = {{height: 30}}></View>}
             />
           </View>
-          <CartBill totalValue = {totalValue}/>
+          <CartBill 
+            totalValue = {totalValue}
+            handleClickBuy = {() => {
+                navigation.navigate('ConfirmBuy', {totalPrice: totalValue});
+            }}
+        />
       </SafeAreaView>
   )
 }

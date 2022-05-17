@@ -27,6 +27,9 @@ import EditPassword from '../../screens/EditScreen/EditPassword'
 import ProductReview from '../../screens/ProductReview'
 import ProductManager from '../../screens/ProductManager'
 import EditProductInfo from '../../screens/EditProductInfo'
+import OrderManager from '../../screens/OrderManager'
+import MyReview from '../../screens/MyReview'
+import ConfirmBuyProducts from '../../screens/ConfirmBuyProducts'
 
 const Stack = createStackNavigator();
 export default function HomeStackNavigation() {
@@ -258,6 +261,33 @@ export default function HomeStackNavigation() {
          <Stack.Screen
             name = {"EditProductInfo"}
             component = {EditProductInfo}
+            options= {
+                {
+                    headerShown: false
+                }
+            }
+        />
+        <Stack.Screen
+            name = {"orderManager"}
+            component = {OrderManager}
+            options= {
+                {
+                    headerShown: false
+                }
+            }
+        />
+          <Stack.Screen
+            name = {"MyReview"}
+            component = {MyReview}
+            options= {
+                {
+                    headerShown: false
+                }
+            }
+        />
+         <Stack.Screen
+            name = {"ConfirmBuy"}
+            component = {ConfirmBuyProducts}
             options= {
                 {
                     headerShown: false

@@ -310,6 +310,18 @@ const styles = StyleSheet.create({
         borderBottomColor: '#e6e6e6',
         borderBottomWidth: 1
     },
+    hr_light_right: {
+        borderRightColor: '#e6e6e6',
+        borderRightWidth: 1
+    },
+    hr_light_top: {
+        borderTopColor: '#e6e6e6',
+        borderTopWidth: 1
+    },
+    hr_right: {
+        borderRightColor: '#bfbfbf',
+        borderRightWidth: 1
+    },
     ml_25: {
         marginLeft: 25
     },

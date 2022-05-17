@@ -4,7 +4,7 @@ import Header from '../components/notiComponents/Header'
 import { FlatList } from 'react-native-gesture-handler'
 import RecommendItem from '../components/homeComponents/RecommendItem'
 
-export default function LikedProduct() {
+export default function RecentlyView() {
     const listData = [
         {
             id: 1,

@@ -83,7 +83,7 @@ export default function MainUserScreen() {
                 </TouchableOpacity>
                 <TouchableOpacity
                         onPress = {() => {
-                            navigation.navigate('RegisterSeller')
+                            navigation.navigate('orderManager')
                         }}
                     >
                     <UserOptionTag 
@@ -129,10 +129,16 @@ export default function MainUserScreen() {
                     title = {"Đã xem gần đây"}
                 />
             </TouchableOpacity>
-            <UserOptionTag 
-                sourceIcon = {starIcon}
-                title = {"Đánh giá của tôi"}
-            />
+            <TouchableOpacity
+                onPress = {() => {
+                    navigation.navigate('MyReview');
+                }}
+            >
+                <UserOptionTag 
+                    sourceIcon = {starIcon}
+                    title = {"Đánh giá của tôi"}
+                />
+            </TouchableOpacity>
             <SeparateView/>
             <TouchableOpacity
                 onPress={() => {
