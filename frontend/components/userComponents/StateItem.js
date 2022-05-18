@@ -10,7 +10,7 @@ export default function StateItem(props) {
     style = {[styles.alignCenterItem, styles.pr_5,  styles.pl_5, styles.mb_10, styles.width_25]}
     activeOpacity = {1}
     onPress = {() => {
-        navigation.navigate('BillStatus', {title: props.title})
+        navigation.navigate('BillStatus', {activePage: props.title})
     }}
     >
         <View style = {[styles.pb_15, styles.pt_15]}>

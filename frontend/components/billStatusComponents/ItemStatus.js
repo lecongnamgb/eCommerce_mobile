@@ -34,14 +34,48 @@ export default function ItemStatus(props) {
             </Text>
         </View>
         <View style = {{alignItems: 'flex-end', top: 10, right: 10, height: 60}}>
-            <TouchableOpacity 
-                style = {[{backgroundColor: '#66b3ff', height: 40,width: 120, borderRadius: 5}, styles.alignCenterItem, styles.alignCenterItemVertically]}
-                onPress = {props.handlePress}
-            >
+            {
+                props.status == "Đã giao" ?
+                <TouchableOpacity 
+                    style = {[{backgroundColor: '#66b3ff', height: 40,width: 120, borderRadius: 5}, styles.alignCenterItem, styles.alignCenterItemVertically]}
+                    onPress = {props.handlePress}
+                    activeOpacity = {1}
+                >
+                    <Text style = {{color: '#fff'}}>
+                        Đánh giá
+                    </Text>
+                </TouchableOpacity>
+                :
+                props.status == "Chờ lấy hàng" ?
+                <TouchableOpacity 
+                    style = {[{backgroundColor: '#66b3ff', height: 40,width: 120, borderRadius: 5}, styles.alignCenterItem, styles.alignCenterItemVertically]}
+                    onPress = {props.handleCancel}
+                    activeOpacity = {1}
+                >
                 <Text style = {{color: '#fff'}}>
-                    Đánh giá
+                    Huỷ đơn
                 </Text>
             </TouchableOpacity>
+            :
+             props.status == "Đã huỷ" ?
+             <TouchableOpacity 
+                 style = {[{backgroundColor: '#ccc', height: 40,width: 120, borderRadius: 5}, styles.alignCenterItem, styles.alignCenterItemVertically]}
+                 activeOpacity = {1}
+             >
+             <Text style = {{color: '#fff'}}>
+                 Đánh giá
+             </Text>
+         </TouchableOpacity>
+         :
+         <TouchableOpacity 
+                style = {[{backgroundColor: '#ccc', height: 40,width: 120, borderRadius: 5}, styles.alignCenterItem, styles.alignCenterItemVertically]}
+                activeOpacity = {1}
+            >
+            <Text style = {{color: '#fff'}}>
+                Huỷ
+            </Text>
+        </TouchableOpacity>
+            }
         </View>
         <SeparateView/>
     </View>

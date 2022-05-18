@@ -36,17 +36,7 @@ export default function ListFilterItem(props) {
             <TouchableOpacity
                 key = {index}
                 activeOpacity = {1}
-                onPress = {() => {
-                    setListData(
-                        listData.map((subItem, subIndex) => {
-                            if (index === subIndex) {
-                                return {...subItem, active: true}
-                            } else {
-                                return {...subItem, active: false}
-                            }
-                        })
-                    )
-                }}
+                onPress = {props.handleClickItem}
             >
                 <FilterItem 
                     title = {item.title} 
