@@ -1,9 +1,11 @@
-import { View, Text, SafeAreaView, TextInput, TouchableOpacity } from 'react-native'
+import { View, Text, SafeAreaView, TextInput, TouchableOpacity, Image, ScrollView } from 'react-native'
 import React, {useState} from 'react'
 import FieldWithUpperLabel from '../components/checkInComponents/FieldWithUpperLabel'
 import Header from '../components/notiComponents/Header'
 import styles from '../components/styles'
 import SeparateView from '../components/userComponents/SeparateView'
+import UserOptionTag from '../components/userComponents/UserOptionTag'
+import { Picker } from '@react-native-picker/picker'
 
 export default function EditProductInfo({route}) {
     const [productName, setProductName] = useState(route.params?.productName);
@@ -13,8 +15,54 @@ export default function EditProductInfo({route}) {
     const [uriProductImg2, setUriProductImg2] = useState(route.params?.uriProductImg2)
     const [uriProductImg3, setUriProductImg3] = useState(route.params?.uriProductImg3)
     const [description, setDescription] = useState(route.params?.description)
+    const [openCategory, setOpenCategory] = useState(false)
+    const listCategory = [
+        {
+            id: 2,
+            title: "Quần áo nam"
+        },
+        {
+            id: 3,
+            title: "Quần áo nữ"
+        }, 
+        {
+            id: 4,
+            title: "Nhà cửa & đời sống"
+        },
+        {
+            id: 5,
+            title: "Đồ chơi"
+        },
+        {
+            id: 6,
+            title: "Sách"
+        },
+        {
+            id: 7,
+            title: "Thiết bị điện tử"
+        },
+        {
+            id: 8,
+            title: "Mỹ phẩm"
+        },
+        {
+            id: 9,
+            title: "Giày dép nam"
+        },
+        {
+            id: 10,
+            title: "Giày dép nữ"
+        }, 
+        {
+            id: 11,
+            title: "Phụ kiện" 
+        }
+    ]
+
+    const [selectedCategory, setSelectedCategory] = useState('');
   return (
-    <SafeAreaView style = {{height: '100%', backgroundColor: '#fff'}}>
+      <SafeAreaView style = {{height: '100%', backgroundColor: '#fff'}}>
+    <ScrollView style = {{height: '100%',backgroundColor: '#fff'}}>
         <Header
             title = {route.params.title}
             canBack = {true}
@@ -43,6 +91,27 @@ export default function EditProductInfo({route}) {
                 onChangeText = {txt => setUriProductAvt(txt)}
             />
         </View>
+        <TouchableOpacity 
+            style = {[styles.p_10, styles.flex_row]}
+            onPress = {() => {
+                setOpenCategory(true);
+            }}
+        >
+            <View style = {[styles.alignCenterItem, styles.alignCenterItemVertically]}>
+                <Text>Danh mục hàng</Text>
+            </View>
+            <View
+                style = {{width: '75%', alignItems: 'flex-end'}}
+            >
+                <View style = {[styles.alignCenterItem, styles.alignCenterItemVertically, styles.flex_row]}>
+                    <Text style = {selectedCategory == '' ? {color: '#8c8c8c'} : null}>{selectedCategory == '' ? "Thiết lập ngay" : selectedCategory}</Text>
+                    <Image
+                        source = {require('../assets/icon/right_arrow.png')}
+                        style = {styles.img_24x24}
+                    />
+                </View>
+            </View>
+        </TouchableOpacity>
         <SeparateView/>
         <View style = {styles.hr_light_bottom}>
             <FieldWithUpperLabel
@@ -86,6 +155,29 @@ export default function EditProductInfo({route}) {
         >
                 <Text style = {{color: '#fff'}}>Lưu</Text>
         </TouchableOpacity>
+        {
+            openCategory ? 
+            <View style = {{borderTopColor: '#ccc', position: 'absolute', bottom: 0, width: '100%', backgroundColor: '#fff', borderTopWidth: 1, paddingTop: 10}}>
+                <TouchableOpacity
+                    onPress = {() => {
+                        setOpenCategory(false)
+                    }}
+                    style = {{alignItems: 'flex-end'}}
+                >
+                    <Text style = {{fontSize: 16, fontWeight: 'bold', color: '#3399ff', paddingRight: 10}}>Done</Text>
+                </TouchableOpacity>
+                <Picker
+                    selectedValue={selectedCategory}
+                    onValueChange = {(itemValue, itemIndex) => {
+                        setSelectedCategory(itemValue)
+                    }}
+                >
+                    {listCategory.map(item => <Picker.Item key = {item.id} label = {item.title} value = {item.title}/>)}
+                </Picker>
+        </View>
+        : null
+        }
+    </ScrollView>
     </SafeAreaView>
   )
 }

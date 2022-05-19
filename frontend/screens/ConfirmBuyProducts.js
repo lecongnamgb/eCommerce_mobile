@@ -7,6 +7,7 @@ import styles from '../components/styles'
 import CartBill from '../components/cartComponents/CartBill'
 
 export default function ConfirmBuyProducts({route}) {
+    console.log(route.params)
     const [receiverName, setReceiverName] = useState('')
     const [receiverPhoneNumber, setReceiverPhoneNumber] = useState('')
     const [receiverAddress, setReceiverAddress] = useState('')

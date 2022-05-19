@@ -11,14 +11,6 @@ const {width} = Dimensions.get("window");
 export default function RecommendItem(props) {
     const navigation = useNavigation();
     var {recommendItem} = props
-    var stars = [];
-    for (let i = 1; i <= recommendItem.rating; i++) {
-        stars.push(i);
-    }
-    var hasHalfStar = false;
-    if (!Number.isInteger(recommendItem.rating)) {
-        hasHalfStar = true;
-    }
   return (
     <TouchableOpacity 
         style={[{width: width/2}, styles.alignCenterItem,styles.bg_lightGrey, {padding: 3}]}
@@ -28,7 +20,7 @@ export default function RecommendItem(props) {
     >
         <View>
         <Image
-            source={recommendItem.sourceIcon}
+            source={{uri: recommendItem.sourceIcon}}
             style={{width: width/2 - 6, height: width/2 - 6, resizeMode: 'contain', backgroundColor: '#fff'}}
         />
         <View style = {{position: 'absolute', top: 0, right: 0}}>

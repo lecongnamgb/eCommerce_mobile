@@ -17,7 +17,7 @@ export default function CartItem(props) {
     <View style = {[styles.flex_row, styles.ml_25, styles.mt_10, styles.pb_10, styles.bg_white, styles.hr_bottom]}>
         <View>
             <Image 
-                source = {props.sourceIcon}
+                source = {{uri: props.sourceIcon}}
                 style = {[styles.img_100x100, {resizeMode: 'contain'}]}
             />
         </View>

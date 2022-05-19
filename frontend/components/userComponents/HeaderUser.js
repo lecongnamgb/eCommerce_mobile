@@ -7,10 +7,9 @@ import {Text,
         } from 'react-native';
 import UserImage from '../../assets/icon/user.png'
 import styles from '../styles'
-import SeparateView from './SeparateView';
 import { useNavigation } from '@react-navigation/native';
 
-export default function HeaderUser() {
+export default function HeaderUser(props) {
     const navigation = useNavigation()
   return (
     <SafeAreaView style = {styles.container}>
@@ -22,11 +21,8 @@ export default function HeaderUser() {
                 <Image source = {UserImage}
                         style = {styles.userImage}/>
             </TouchableOpacity>
-            <View style = {styles.ml_10}>
-                <Text style = {[styles.userName, styles.bold]}>Lê Công Nam</Text>
-                <Text style = {styles.bottom}>
-                    <Text>Đang theo dõi <Text style = {styles.bold}>0</Text></Text>
-                </Text>
+            <View style = {[styles.ml_10, styles.alignCenterItemVertically]}>
+                <Text style = {[styles.userName, styles.bold]}>{props.username}</Text>
             </View>
         </View>
     </SafeAreaView>

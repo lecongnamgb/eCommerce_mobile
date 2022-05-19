@@ -30,13 +30,13 @@ export default function HeaderShop(props) {
                     <Text style = {{color: '#fff', marginTop: 10, fontSize: 15}}>{props.ownerName}</Text>
                 </View>
             </View>
-            <TouchableOpacity 
+            {/* <TouchableOpacity 
                 activeOpacity={1}
                 style = {[{height: 35, position: 'absolute', right: 20, bottom: 30 ,width: 80, borderColor: '#fff', borderWidth: 1, zIndex: 2}, styles.alignCenterItem, styles.alignCenterItemVertically]}
                 onPress = {props.onPressFollow}
             >
                 <Text style = {{color: '#fff'}}>{!props.follow ? 'Theo dõi' : "Đang theo "}</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
         </View>
     </View>
   )

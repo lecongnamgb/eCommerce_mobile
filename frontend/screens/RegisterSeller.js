@@ -5,6 +5,7 @@ import SeparateView from '../components/userComponents/SeparateView'
 import NormalField from '../components/checkInComponents/NormalField'
 import FieldWithUpperLabel from '../components/checkInComponents/FieldWithUpperLabel'
 import styles from '../components/styles'
+import { Picker } from '@react-native-picker/picker'
 
 export default function RegisterSeller() {
     const [shopName, setShopName] = useState('')

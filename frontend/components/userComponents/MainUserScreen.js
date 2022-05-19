@@ -29,7 +29,7 @@ export default function MainUserScreen() {
             currentActive = {"User"}
         />
     <ScrollView>
-            <HeaderUser/>
+            <HeaderUser username = {"Lê Công Nam"}/>
             <SeparateView/>
             <TouchableOpacity
                 onPress = {() => {
@@ -55,7 +55,6 @@ export default function MainUserScreen() {
                     description = {"Xem thêm sản phẩm"}
                 />
             </TouchableOpacity>
-            <HorizontalProductList/>
             <SeparateView/>
             {userInfo.isSeller ?
             <View>

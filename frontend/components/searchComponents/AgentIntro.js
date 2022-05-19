@@ -17,7 +17,7 @@ export default function AgentIntro(props) {
                 style = {[styles.pl_10, styles.pr_10]}
             >
                 <Image
-                    source = {require('../../assets/icon/ao123.png')}
+                    source = {{uri: props.agentAvt}}
                     style = {[styles.img_64x64, styles.rounded]}
                 />
             </View>

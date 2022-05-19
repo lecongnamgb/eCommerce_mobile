@@ -60,6 +60,7 @@ export default function ResultShop({route}) {
         {
             shops.map(shop => 
                 <TouchableOpacity
+                    key = {shop.id}
                     onPress = {() => {
                         navigation.navigate('Shop')
                     }}

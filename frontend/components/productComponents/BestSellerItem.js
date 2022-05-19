@@ -8,7 +8,7 @@ export default function BestSellerItem(props) {
   return (
     <View style = {{width: 126, borderColor: '#d9d9d9', borderWidth: 1, marginRight: 5, marginLeft:5}}>
         <Image
-            source = {item.sourceIcon}
+            source = {{uri: item.sourceIcon}}
             style = {[styles.img_124x124, {resizeMode: 'contain'}]}
         />
         <View style = {[styles.mt_10, styles.ml_5, styles.mr_5, styles.mb_10]}>

@@ -15,19 +15,19 @@ export default function Product() {
     const images = [
         {
             id: 1,
-            sourceIcon: require('../assets/icon/Ghile_1.jpeg')
+            sourceIcon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQE95InBHABknnQjWnbCwMPjkBq1Pd8EKiUi_9isA8miFV2sgaIh-tAbBj_FOuV9rLk6QA&usqp=CAU"
         },
         {
             id: 2,
-            sourceIcon: require('../assets/icon/Ghile_2.jpeg')
+            sourceIcon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5ltnermWFkyHkSyYTFGOhooozvPNtZGLNOvPv5ae22P2TcqKCJ3CpVvpcx7KnyMRNCv0&usqp=CAU"
         },
         {
             id: 3,
-            sourceIcon: require('../assets/icon/Ghile_3.jpeg')
+            sourceIcon: "https://vn-test-11.slatic.net/p/8e5d568458223fbe9ed9ec0eba09642d.png"
         },
         {
             id: 4,
-            sourceIcon: require('../assets/icon/Ghile_4.jpeg')
+            sourceIcon: "https://cf.shopee.vn/file/68b45cba995b332785a7121af2819f0b"
         },
     ]
   return (
@@ -42,7 +42,7 @@ export default function Product() {
             <Carousel listData = {images}/>
             <OverviewProduct isSale = {true}/>
             <SeparateView/>
-            <AgentIntro/>
+            <AgentIntro agentAvt = {"https://1.bp.blogspot.com/-MWpiekrll-g/YMW2vMk0CzI/AAAAAAAAtwo/6FwzorrofsML__bdshUQreQy0V1TPwdfgCNcBGAsYHQ/s0/mau-ao-nam.jpg"}/>
             <SeparateView/>
             <BestSellerList/>
             <SeparateView/>

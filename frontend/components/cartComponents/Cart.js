@@ -18,7 +18,7 @@ export default function Cart() {
     const [orders, setOrders] = useState([
         {
             id: 1,
-            sourceIcon: require('../../assets/icon/ao123.png'),
+            sourceIcon: "https://khosiquanaogiare.com/wp-content/uploads/2021/05/ttl836-ao-thun-tay-lo-form-rong-hinh-dia-bay5-1.jpg",
             description: 'áo vjp pro 123 png 123 fasd sdcd ăer',
             shopName: 'shop1',
             price: 19000,
@@ -26,7 +26,7 @@ export default function Cart() {
         },
         {
             id: 2,
-            sourceIcon: require('../../assets/icon/ao123.png'),
+            sourceIcon: "https://khosiquanaogiare.com/wp-content/uploads/2021/05/ttl836-ao-thun-tay-lo-form-rong-hinh-dia-bay5-1.jpg",
             description: 'áo vjp pro 123 png 123 fasd sdcd ăer',
             shopName: 'shop2',
             price: 19000,
@@ -34,7 +34,7 @@ export default function Cart() {
         },
         {
             id: 3,
-            sourceIcon: require('../../assets/icon/ao123.png'),
+            sourceIcon: "https://khosiquanaogiare.com/wp-content/uploads/2021/05/ttl836-ao-thun-tay-lo-form-rong-hinh-dia-bay5-1.jpg",
             description: 'áo vjp pro 123 png 123 fasd sdcd ăer',
             shopName: 'shop3',
             price: 19000,
@@ -42,7 +42,7 @@ export default function Cart() {
         },
         {
             id: 4,
-            sourceIcon: require('../../assets/icon/ao123.png'),
+            sourceIcon: "https://khosiquanaogiare.com/wp-content/uploads/2021/05/ttl836-ao-thun-tay-lo-form-rong-hinh-dia-bay5-1.jpg",
             description: 'áo vjp pro 123 png 123 fasd sdcd ăer',
             shopName: 'shop4',
             price: 19000,
@@ -50,7 +50,7 @@ export default function Cart() {
         },
         {
             id: 5,
-            sourceIcon: require('../../assets/icon/ao123.png'),
+            sourceIcon: "https://khosiquanaogiare.com/wp-content/uploads/2021/05/ttl836-ao-thun-tay-lo-form-rong-hinh-dia-bay5-1.jpg",
             description: 'áo vjp pro 123 png 123 fasd sdcd ăer',
             shopName: 'shop5',
             price: 19000,
@@ -58,7 +58,7 @@ export default function Cart() {
         },
         {
             id: 6,
-            sourceIcon: require('../../assets/icon/ao123.png'),
+            sourceIcon: "https://khosiquanaogiare.com/wp-content/uploads/2021/05/ttl836-ao-thun-tay-lo-form-rong-hinh-dia-bay5-1.jpg",
             description: 'áo vjp pro 123 png 123 fasd sdcd ăer',
             shopName: 'shop6',
             price: 19000,
@@ -134,7 +134,7 @@ export default function Cart() {
           <CartBill 
             totalValue = {totalValue}
             handleClickBuy = {() => {
-                navigation.navigate('ConfirmBuy', {totalPrice: totalValue});
+                navigation.navigate('ConfirmBuy', {totalPrice: totalValue, ...orders});
             }}
         />
       </SafeAreaView>

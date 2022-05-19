@@ -13,7 +13,7 @@ export default function ResultSearchScreen({route}) {
     const listData = [
         {
             id: 101,
-            sourceIcon: require('../assets/icon/ao123.png'),
+            sourceIcon: "https://khosiquanaogiare.com/wp-content/uploads/2021/05/ttl836-ao-thun-tay-lo-form-rong-hinh-dia-bay5-1.jpg",
             title: "Áo thun chất liệu siêu cấp vip pro, mặc co giãn thoải mái thôi rồi",
             price: 1000,
             quantitySold: 1700,
@@ -22,7 +22,7 @@ export default function ResultSearchScreen({route}) {
         },
         {
             id: 102,
-            sourceIcon: require('../assets/icon/ao123.png'),
+            sourceIcon: "https://khosiquanaogiare.com/wp-content/uploads/2021/05/ttl836-ao-thun-tay-lo-form-rong-hinh-dia-bay5-1.jpg",
             title: "Áo thun chất liệu siêu cấp vip pro, mặc co giãn thoải mái thôi rồi",
             price: 1000,
             quantitySold: 1700,
@@ -31,7 +31,7 @@ export default function ResultSearchScreen({route}) {
         },
         {
             id: 103,
-            sourceIcon: require('../assets/icon/ao123.png'),
+            sourceIcon: "https://khosiquanaogiare.com/wp-content/uploads/2021/05/ttl836-ao-thun-tay-lo-form-rong-hinh-dia-bay5-1.jpg",
             title: "Áo thun chất liệu siêu cấp vip pro, mặc co giãn thoải mái thôi rồi",
             price: 1000,
             quantitySold: 170,
@@ -40,7 +40,7 @@ export default function ResultSearchScreen({route}) {
         },
         {
             id: 104,
-            sourceIcon: require('../assets/icon/ao123.png'),
+            sourceIcon: "https://khosiquanaogiare.com/wp-content/uploads/2021/05/ttl836-ao-thun-tay-lo-form-rong-hinh-dia-bay5-1.jpg",
             title: "Áo thun chất liệu siêu cấp vip pro, mặc co giãn thoải mái thôi rồi",
             price: 1000,
             quantitySold: 1700,
@@ -49,7 +49,7 @@ export default function ResultSearchScreen({route}) {
         },
         {
             id: 105,
-            sourceIcon: require('../assets/icon/ao123.png'),
+            sourceIcon: "https://khosiquanaogiare.com/wp-content/uploads/2021/05/ttl836-ao-thun-tay-lo-form-rong-hinh-dia-bay5-1.jpg",
             title: "Áo thun chất liệu siêu cấp vip pro, mặc co giãn thoải mái thôi rồi",
             price: 1000,
             quantitySold: 1700,
@@ -58,7 +58,7 @@ export default function ResultSearchScreen({route}) {
         },
         {
             id: 106,
-            sourceIcon: require('../assets/icon/ao123.png'),
+            sourceIcon: "https://khosiquanaogiare.com/wp-content/uploads/2021/05/ttl836-ao-thun-tay-lo-form-rong-hinh-dia-bay5-1.jpg",
             title: "Áo thun chất liệu siêu cấp vip pro, mặc co giãn thoải mái thôi rồi",
             price: 1000,
             quantitySold: 1700,
@@ -67,7 +67,7 @@ export default function ResultSearchScreen({route}) {
         },
         {
             id: 107,
-            sourceIcon: require('../assets/icon/ao123.png'),
+            sourceIcon:"https://khosiquanaogiare.com/wp-content/uploads/2021/05/ttl836-ao-thun-tay-lo-form-rong-hinh-dia-bay5-1.jpg",
             title: "Áo thun chất liệu siêu cấp vip pro, mặc co giãn thoải mái thôi rồi",
             price: 1000,
             quantitySold: 1700,
@@ -76,7 +76,7 @@ export default function ResultSearchScreen({route}) {
         },
         {
             id: 108,
-            sourceIcon: require('../assets/icon/ao123.png'),
+            sourceIcon: "https://khosiquanaogiare.com/wp-content/uploads/2021/05/ttl836-ao-thun-tay-lo-form-rong-hinh-dia-bay5-1.jpg",
             title: "Áo thun chất liệu siêu cấp vip pro, mặc co giãn thoải mái thôi rồi",
             price: 1000,
             quantitySold: 1700,
@@ -85,7 +85,7 @@ export default function ResultSearchScreen({route}) {
         },
         {
             id: 109,
-            sourceIcon: require('../assets/icon/ao123.png'),
+            sourceIcon: "https://khosiquanaogiare.com/wp-content/uploads/2021/05/ttl836-ao-thun-tay-lo-form-rong-hinh-dia-bay5-1.jpg",
             title: "Áo thun chất liệu siêu cấp vip pro, mặc co giãn thoải mái thôi rồi",
             price: 1000,
             quantitySold: 1700,
@@ -94,7 +94,7 @@ export default function ResultSearchScreen({route}) {
         },
         {
             id: 110,
-            sourceIcon: require('../assets/icon/ao123.png'),
+            sourceIcon: "https://khosiquanaogiare.com/wp-content/uploads/2021/05/ttl836-ao-thun-tay-lo-form-rong-hinh-dia-bay5-1.jpg",
             title: "Áo thun chất liệu siêu cấp vip pro, mặc co giãn thoải mái thôi rồi",
             price: 1000,
             quantitySold: 1700,
@@ -116,7 +116,10 @@ export default function ResultSearchScreen({route}) {
                 numColumns={2}
                 scrollEnabled={true}
                 keyExtractor ={item => item.id}
-                ListHeaderComponent= {<AgentIntro seeMore = {true} handleSeeMore = {() => {
+                ListHeaderComponent= {<AgentIntro 
+                    agentAvt = {"https://khosiquanaogiare.com/wp-content/uploads/2021/05/ttl836-ao-thun-tay-lo-form-rong-hinh-dia-bay5-1.jpg"}
+                    seeMore = {true} 
+                    handleSeeMore = {() => {
                     navigation.navigate('resultShop', {text: route.params.text})
                 }}/>}
                 ListFooterComponent = {<View style = {{height: 100}}></View>}

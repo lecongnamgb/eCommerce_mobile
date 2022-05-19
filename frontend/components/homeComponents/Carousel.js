@@ -16,15 +16,15 @@ export default function Carousel(props) {
     const images = [
         {
             id: 1,
-            sourceIcon: require('../../assets/icon/carousel_1.png'),
+            sourceIcon: "https://cf.shopee.vn/file/8da7a277ab0b311b9152070ac7e2c217_xxhdpi",
         },
         {
             id: 2,
-            sourceIcon: require('../../assets/icon/carousel_2.png'),
+            sourceIcon: "https://cf.shopee.vn/file/96f17971787f975c80dbdc0ff11d7435_xxhdpi",
         },
         {
             id: 3,
-            sourceIcon: require('../../assets/icon/carousel_3.png')
+            sourceIcon:"https://cf.shopee.vn/file/https://cf.shopee.vn/file/c851f4745146f1c66284c6a186fd1dc3_xxhdpi"
         }
 ]
     // const [images, setImages] = useState(
@@ -53,7 +53,7 @@ const change = ({nativeEvent}) => {
     const renderItem = ({item, index}) => (
         <Image
             key={index}
-            source={item.sourceIcon}
+            source={{ uri: item.sourceIcon}}
             style={ props.listData == null ? {width, height, resizeMode: 'contain'} : {width, height: 500}}
         />
     )
@@ -86,7 +86,5 @@ const change = ({nativeEvent}) => {
              </View>
         </SafeAreaView>
       );
-                
-                return null;
 
 }

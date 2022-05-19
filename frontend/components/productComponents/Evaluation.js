@@ -9,7 +9,7 @@ export default function Evaluation(props) {
     <View style = {[styles.p_15, styles.flex_row, styles.hr_bottom]}>
       <View style = {{paddingRight: 15}}>
         <Image
-            source = {evaluation.userIcon}
+            source = {{uri: evaluation.userIcon}}
             style = {[styles.img_32x32, styles.rounded]}
         />
       </View>

@@ -44,7 +44,7 @@ export default function EvaluationScreen() {
     const listData = [
         {
             id: 1,
-            userIcon: require('../assets/icon/ao123.png'),
+            userIcon: "https://khosiquanaogiare.com/wp-content/uploads/2021/05/ttl836-ao-thun-tay-lo-form-rong-hinh-dia-bay5-1.jpg",
             userName: 'Lê Công Nam',
             ratingStars: 5,
             comment: 'Sản phẩm vjppr0',
@@ -53,7 +53,7 @@ export default function EvaluationScreen() {
         },
         {
             id: 2,
-            userIcon: require('../assets/icon/ao123.png'),
+            userIcon: "https://khosiquanaogiare.com/wp-content/uploads/2021/05/ttl836-ao-thun-tay-lo-form-rong-hinh-dia-bay5-1.jpg",
             userName: 'Lê Công Nam',
             ratingStars: 5,
             comment: 'Sản phẩm vjppr0',
@@ -62,7 +62,7 @@ export default function EvaluationScreen() {
         },
         {
             id: 3,
-            userIcon: require('../assets/icon/ao123.png'),
+            userIcon: "https://khosiquanaogiare.com/wp-content/uploads/2021/05/ttl836-ao-thun-tay-lo-form-rong-hinh-dia-bay5-1.jpg",
             userName: 'Lê Công Nam',
             ratingStars: 5,
             comment: 'Sản phẩm vjppr0',
@@ -71,7 +71,7 @@ export default function EvaluationScreen() {
         },
         {
             id: 4,
-            userIcon: require('../assets/icon/ao123.png'),
+            userIcon: "https://khosiquanaogiare.com/wp-content/uploads/2021/05/ttl836-ao-thun-tay-lo-form-rong-hinh-dia-bay5-1.jpg",
             userName: 'Lê Công Nam',
             ratingStars: 5,
             comment: 'Sản phẩm vjppr0',
@@ -80,7 +80,7 @@ export default function EvaluationScreen() {
         },
         {
             id: 5,
-            userIcon: require('../assets/icon/ao123.png'),
+            userIcon: "https://khosiquanaogiare.com/wp-content/uploads/2021/05/ttl836-ao-thun-tay-lo-form-rong-hinh-dia-bay5-1.jpg",
             userName: 'Lê Công Nam',
             ratingStars: 5,
             comment: 'Sản phẩm vjppr0',
@@ -89,7 +89,7 @@ export default function EvaluationScreen() {
         },
         {
             id: 6,
-            userIcon: require('../assets/icon/ao123.png'),
+            userIcon: "https://khosiquanaogiare.com/wp-content/uploads/2021/05/ttl836-ao-thun-tay-lo-form-rong-hinh-dia-bay5-1.jpg",
             userName: 'Lê Công Nam',
             ratingStars: 5,
             comment: 'Sản phẩm vjppr0',
@@ -98,7 +98,7 @@ export default function EvaluationScreen() {
         },
         {
             id: 7,
-            userIcon: require('../assets/icon/ao123.png'),
+            userIcon: "https://khosiquanaogiare.com/wp-content/uploads/2021/05/ttl836-ao-thun-tay-lo-form-rong-hinh-dia-bay5-1.jpg",
             userName: 'Lê Công Nam',
             ratingStars: 5,
             comment: 'Sản phẩm vjppr0',
@@ -107,7 +107,7 @@ export default function EvaluationScreen() {
         },
         {
             id: 8,
-            userIcon: require('../assets/icon/ao123.png'),
+            userIcon: "https://khosiquanaogiare.com/wp-content/uploads/2021/05/ttl836-ao-thun-tay-lo-form-rong-hinh-dia-bay5-1.jpg",
             userName: 'Lê Công Nam',
             ratingStars: 5,
             comment: 'Sản phẩm vjppr0',

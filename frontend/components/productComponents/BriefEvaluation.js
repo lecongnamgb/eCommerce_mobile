@@ -7,7 +7,7 @@ export default function BriefEvaluation() {
     const listData = [
         {
             id: 1,
-            userIcon: require('../../assets/icon/ao123.png'),
+            userIcon: "https://khosiquanaogiare.com/wp-content/uploads/2021/05/ttl836-ao-thun-tay-lo-form-rong-hinh-dia-bay5-1.jpg",
             userName: 'Lê Công Nam',
             ratingStars: 5,
             comment: 'Sản phẩm vjppr0',
@@ -16,7 +16,7 @@ export default function BriefEvaluation() {
         },
         {
             id: 2,
-            userIcon: require('../../assets/icon/ao123.png'),
+            userIcon: "https://khosiquanaogiare.com/wp-content/uploads/2021/05/ttl836-ao-thun-tay-lo-form-rong-hinh-dia-bay5-1.jpg",
             userName: 'Lê Công Nam',
             ratingStars: 5,
             comment: 'Sản phẩm vjppr0',
