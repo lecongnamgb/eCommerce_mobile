@@ -15,6 +15,7 @@ export default function EditProductInfo({route}) {
     const [uriProductImg2, setUriProductImg2] = useState(route.params?.uriProductImg2)
     const [uriProductImg3, setUriProductImg3] = useState(route.params?.uriProductImg3)
     const [description, setDescription] = useState(route.params?.description)
+    const [origin, setOrigin] = useState(route.params?.origin)
     const [openCategory, setOpenCategory] = useState(false)
     const listCategory = [
         {
@@ -92,7 +93,7 @@ export default function EditProductInfo({route}) {
             />
         </View>
         <TouchableOpacity 
-            style = {[styles.p_10, styles.flex_row]}
+            style = {[styles.p_10, styles.flex_row, styles.hr_light_bottom]}
             onPress = {() => {
                 setOpenCategory(true);
             }}
@@ -112,6 +113,14 @@ export default function EditProductInfo({route}) {
                 </View>
             </View>
         </TouchableOpacity>
+        <View style = {styles.hr_light_bottom}>
+            <FieldWithUpperLabel
+                label = {"Xuất sứ sản phẩm"}
+                plhdTitle = {"Xuất sứ"}
+                value = {origin}
+                onChangeText = {txt => setOrigin(txt)}
+            />
+        </View>
         <SeparateView/>
         <View style = {styles.hr_light_bottom}>
             <FieldWithUpperLabel

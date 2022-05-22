@@ -7,6 +7,7 @@ import ItemStatus from '../components/billStatusComponents/ItemStatus'
 import SeparateView from '../components/userComponents/SeparateView'
 import { useNavigation } from '@react-navigation/native'
 import FilterItem from '../components/billStatusComponents/FilterItem'
+import styles from '../components/styles'
 
 export default function BillStatus({route}) {
     const navigation = useNavigation();
@@ -20,42 +21,42 @@ export default function BillStatus({route}) {
             quantity: 1,
             status: 'Đã huỷ',
         },
-        {
-            id: 1,  
-            shopName: 'shop1',
-            uriImg: 'https://top10tphcm.com/wp-content/uploads/2019/08/ao-thun-tay-lo-co-gai-sexy.png',
-            productName: 'Áo thun chất lượng vjppro 123 123 123 123 123 ',
-            priceEach: 325000,
-            quantity: 1,
-            status: 'Đang giao',
-        },
-        {
-            id: 2,  
-            shopName: 'shop1',
-            uriImg: 'https://top10tphcm.com/wp-content/uploads/2019/08/ao-thun-tay-lo-co-gai-sexy.png',
-            productName: 'Áo thun chất lượng vjppro 123 123 123 123 123 ',
-            priceEach: 325000,
-            quantity: 1,
-            status: 'Chờ lấy hàng',
-        },
-        {
-            id: 3,  
-            shopName: 'shop1',
-            uriImg: 'https://top10tphcm.com/wp-content/uploads/2019/08/ao-thun-tay-lo-co-gai-sexy.png',
-            productName: 'Áo thun chất lượng vjppro 123 123 123 123 123 ',
-            priceEach: 325000,
-            quantity: 1,
-            status: 'Đã giao',
-        },
-        {
-            id: 4,  
-            shopName: 'shop1',
-            uriImg: 'https://top10tphcm.com/wp-content/uploads/2019/08/ao-thun-tay-lo-co-gai-sexy.png',
-            productName: 'Áo thun chất lượng vjppro 123 123 123 123 123 ',
-            priceEach: 325000,
-            quantity: 1,
-            status: 'Chờ lấy hàng',
-        },
+        // {
+        //     id: 1,  
+        //     shopName: 'shop1',
+        //     uriImg: 'https://top10tphcm.com/wp-content/uploads/2019/08/ao-thun-tay-lo-co-gai-sexy.png',
+        //     productName: 'Áo thun chất lượng vjppro 123 123 123 123 123 ',
+        //     priceEach: 325000,
+        //     quantity: 1,
+        //     status: 'Đang giao',
+        // },
+        // {
+        //     id: 2,  
+        //     shopName: 'shop1',
+        //     uriImg: 'https://top10tphcm.com/wp-content/uploads/2019/08/ao-thun-tay-lo-co-gai-sexy.png',
+        //     productName: 'Áo thun chất lượng vjppro 123 123 123 123 123 ',
+        //     priceEach: 325000,
+        //     quantity: 1,
+        //     status: 'Chờ lấy hàng',
+        // },
+        // {
+        //     id: 3,  
+        //     shopName: 'shop1',
+        //     uriImg: 'https://top10tphcm.com/wp-content/uploads/2019/08/ao-thun-tay-lo-co-gai-sexy.png',
+        //     productName: 'Áo thun chất lượng vjppro 123 123 123 123 123 ',
+        //     priceEach: 325000,
+        //     quantity: 1,
+        //     status: 'Đã giao',
+        // },
+        // {
+        //     id: 4,  
+        //     shopName: 'shop1',
+        //     uriImg: 'https://top10tphcm.com/wp-content/uploads/2019/08/ao-thun-tay-lo-co-gai-sexy.png',
+        //     productName: 'Áo thun chất lượng vjppro 123 123 123 123 123 ',
+        //     priceEach: 325000,
+        //     quantity: 1,
+        //     status: 'Chờ lấy hàng',
+        // },
     ])
     const [listCategory, setListCategory] = useState([
         {
@@ -81,7 +82,7 @@ export default function BillStatus({route}) {
         
     ])
   return (
-    <SafeAreaView style = {{height: '100%', backgroundColor: '#fff'}}>
+    <SafeAreaView style = {{ backgroundColor: '#fff'}}>
         <Header
             title = {"Đơn mua"}
             canBack = {true}
@@ -139,6 +140,9 @@ export default function BillStatus({route}) {
                     />
                 )
             }
+            <View style = {[styles.alignCenterItem, styles.alignCenterItemVertically, {backgroundColor: '#f2f2f2'}]}>
+                <Text>Không còn sản phẩm nào nữa</Text>
+            </View>
         </ScrollView>
     </SafeAreaView>
   )
